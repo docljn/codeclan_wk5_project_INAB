@@ -11,6 +11,19 @@ class Vendor
     @name = options['name']
   end
 
+  # delete
+  def self.delete_all()
+    sql = "DELETE FROM vendors;"
+    sql_result = SqlRunner.run(sql)
+  end
+
+  # delete
+  def self.delete_one(id)
+    sql = "DELETE FROM vendors WHERE id = $1;"
+    values = [id]
+    sql_result = SqlRunner.run(sql, values)
+  end
+
 
   # create & update
   def save()
@@ -23,7 +36,7 @@ class Vendor
 
 
   private
-  
+
   def insert()
     # create
     sql = "INSERT INTO vendors (name) VALUES ($1) RETURNING id;"
