@@ -45,6 +45,13 @@ class Transaction
     transaction = Transaction.new(sql_result[0])
   end
 
+  # read
+  def self.total_all()
+    sql = "SELECT SUM(amount) from transactions;"
+    sql_result = SqlRunner.run(sql)
+    total = sql_result[0]['sum'].to_i
+  end
+
 
   # create
   def save()
