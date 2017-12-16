@@ -30,6 +30,21 @@ class Transaction
     sql_result = SqlRunner.run(sql, values)
   end
 
+  # read
+  def self.select_all()
+    sql = "SELECT * FROM transactions;"
+    sql_result = SqlRunner.run(sql)
+    transactions_array = sql_result.map {|hash| Transaction.new(hash)}
+  end
+
+  # read
+  def self.select_one(id)
+    sql = "SELECT * FROM transactions where id = $1;"
+    values = [id]
+    sql_result = SqlRunner.run(sql, values)
+    transaction = Transaction.new(sql_result[0])
+  end
+
   def save()
     if @id
       update()

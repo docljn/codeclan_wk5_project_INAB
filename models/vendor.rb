@@ -29,7 +29,7 @@ class Vendor
   def self.select_all()
     sql = "SELECT * FROM vendors;"
     sql_result = SqlRunner.run(sql)
-    categories_array = sql_result.map {|hash| Vendor.new(hash)}
+    transactions_array = sql_result.map {|hash| Vendor.new(hash)}
   end
 
   # read
