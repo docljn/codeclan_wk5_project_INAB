@@ -1,5 +1,5 @@
 # sql_runner.rb
-require('PG')
+require('pg')
 
 class SqlRunner
   # no initialize method needed as there is only a single class method

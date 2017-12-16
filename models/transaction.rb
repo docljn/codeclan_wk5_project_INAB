@@ -12,6 +12,7 @@ class Transaction
     @comment = options['comment']
     @category_id = options['category_id']
     @vendor_id = options['vendor_id']
+    # add date as an extension later: this will be tricky
   end
 end
 
