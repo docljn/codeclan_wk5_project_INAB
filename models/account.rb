@@ -1,5 +1,6 @@
 # account.rb
 require('pry-byebug')
+require_relative('../db/sql_runner.rb')
 
 class Account
 
@@ -9,6 +10,19 @@ class Account
   def initialize(options)
     @id = options['id'].to_i if options[id]
     @name = options['name']
+  end
+
+  # delete
+  def self.delete_all()
+    sql = "DELETE FROM accounts;"
+    sql_result = SqlRunner.run(sql)
+  end
+
+  # delete
+  def self.delete_one(id)
+    sql = "DELETE FROM accounts WHERE id = $1;"
+    values = [id]
+    sql_result = SqlRunner.run(sql, values)
   end
 
   def save()
