@@ -21,7 +21,6 @@ CREATE TABLE vendors(
 CREATE TABLE accounts(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255) NOT NULL
-
 );
 
 CREATE TABLE transactions(
@@ -32,5 +31,4 @@ CREATE TABLE transactions(
   category_id INT4 REFERENCES categories(id),
   vendor_id INT4 REFERENCES vendors(id),
   account_id INT4 REFERENCES accounts(id)
-
 );

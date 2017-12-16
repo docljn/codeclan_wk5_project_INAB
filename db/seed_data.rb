@@ -2,13 +2,14 @@ require('pry-byebug')
 
 require_relative('../models/category.rb')
 require_relative('../models/vendor.rb')
+require_relative('../models/account.rb')
 require_relative('../models/transaction.rb')
 
 
 
 # categories
 Category.delete_all()
-Vendor.delete_all()
+
 
 housekeeping = Category.new({'name' => 'housekeeping'})
 gifts = Category.new({'name' => 'gifts'})
@@ -20,6 +21,8 @@ gifts.save()
 car.save()
 fun.save()
 
+# vendors
+Vendor.delete_all()
 
 lidl = Vendor.new({'name' => 'Lidl'})
 aldi = Vendor.new({'name' => 'Aldi'})
@@ -32,16 +35,16 @@ sainsburys.save()
 waitrose.save()
 
 
+# accounts: # extension
+# Account.delete_all()
 
-
-# vendors
-
+hbos = Account.new({'name' => "Bank of Scotland"})
+hbos.save()
 
 # transactions
 
 
 
-# accounts: # extension
 
 binding.pry
 nil
