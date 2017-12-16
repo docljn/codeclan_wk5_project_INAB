@@ -8,7 +8,7 @@ class Account
   attr_accessor :name
 
   def initialize(options)
-    @id = options['id'].to_i if options[id]
+    @id = options['id'].to_i if options['id']
     @name = options['name']
   end
 
@@ -47,6 +47,7 @@ class Account
       insert()
     end
   end
+
 
 
   private

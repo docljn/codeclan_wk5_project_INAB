@@ -49,6 +49,8 @@ class Category
     end
   end
 
+
+
   private
 
   def insert()

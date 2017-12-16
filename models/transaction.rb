@@ -45,6 +45,8 @@ class Transaction
     transaction = Transaction.new(sql_result[0])
   end
 
+
+  # create
   def save()
     if @id
       update()

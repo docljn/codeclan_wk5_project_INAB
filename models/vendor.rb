@@ -51,6 +51,7 @@ class Vendor
   end
 
 
+
   private
 
   def insert()
