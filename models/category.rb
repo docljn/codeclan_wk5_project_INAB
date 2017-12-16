@@ -12,16 +12,34 @@ class Category
     @name = options['name']
   end
 
+  # delete
   def self.delete_all()
     sql = "DELETE FROM categories;"
     sql_result = SqlRunner.run(sql)
   end
 
+  # delete
   def self.delete_one(id)
     sql = "DELETE FROM categories WHERE id = $1;"
     values = [id]
     sql_result = SqlRunner.run(sql, values)
   end
+
+  # read
+  def self.select_all()
+    sql = "SELECT * FROM categories;"
+    sql_result = SqlRunner.run(sql)
+    categories_array = sql_result.map {|hash| Category.new(hash)}
+  end
+
+  # read
+  def self.select_one(id)
+    sql = "SELECT * FROM categories where id = $1;"
+    values = [id]
+    sql_result = SqlRunner.run(sql, values)
+    category = Category.new(sql_result[0])
+  end
+
 
 
 
