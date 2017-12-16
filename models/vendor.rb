@@ -24,6 +24,21 @@ class Vendor
     sql_result = SqlRunner.run(sql, values)
   end
 
+  # read
+  def self.select_all()
+    sql = "SELECT * FROM vendors;"
+    sql_result = SqlRunner.run(sql)
+    categories_array = sql_result.map {|hash| Vendor.new(hash)}
+  end
+
+  # read
+  def self.select_one(id)
+    sql = "SELECT * FROM vendors where id = $1;"
+    values = [id]
+    sql_result = SqlRunner.run(sql, values)
+    vendor = Vendor.new(sql_result[0])
+  end
+
 
   # create & update
   def save()

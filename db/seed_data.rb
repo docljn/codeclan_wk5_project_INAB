@@ -8,6 +8,7 @@ require_relative('../models/transaction.rb')
 
 # categories
 Category.delete_all()
+Vendor.delete_all()
 
 housekeeping = Category.new({'name' => 'housekeeping'})
 gifts = Category.new({'name' => 'gifts'})
