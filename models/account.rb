@@ -25,6 +25,21 @@ class Account
     sql_result = SqlRunner.run(sql, values)
   end
 
+  # read
+  def self.select_all()
+    sql = "SELECT * FROM accounts;"
+    sql_result = SqlRunner.run(sql)
+    accounts_array = sql_result.map {|hash| Account.new(hash)}
+  end
+
+  # read
+  def self.select_one(id)
+    sql = "SELECT * FROM accounts where id = $1;"
+    values = [id]
+    sql_result = SqlRunner.run(sql, values)
+    account = Account.new(sql_result[0])
+  end
+
   def save()
     if @id
       update()
