@@ -17,32 +17,45 @@ class Transaction
     # add date as an extension later: this will be tricky
   end
 
-def save()
-  if @id
-    insert()
-  else
-    update()
+  # delete
+  def self.delete_all()
+    sql = "DELETE FROM transactions;"
+    sql_result = SqlRunner.run(sql)
   end
-end
+
+  # delete
+  def self.delete_one(id)
+    sql = "DELETE FROM transactions WHERE id = $1;"
+    values = [id]
+    sql_result = SqlRunner.run(sql, values)
+  end
+
+  def save()
+    if @id
+      update()
+    else
+      insert()
+    end
+  end
 
 
-private
-def insert()
-  sql = "INSERT INTO transactions
-  (amount, category_id, vendor_id, comment, account_id)
-  VALUES
-  ($1, $2, $3, $4, $5)
-  RETURNING id;"
-  values = [@amount, @category_id, @vendor_id, @comment, @account_id]
-  sql_result = SqlRunner.run(sql, values)
-  @id = sql_result[0]['id']
-end
+  private
+  def insert()
+    sql = "INSERT INTO transactions
+    (amount, category_id, vendor_id, comment, account_id)
+    VALUES
+    ($1, $2, $3, $4, $5)
+    RETURNING id;"
+    values = [@amount, @category_id, @vendor_id, @comment, @account_id]
+    sql_result = SqlRunner.run(sql, values)
+    @id = sql_result[0]['id']
+  end
 
-def update()
-  sql = "UPDATE transactions SET (amount, category_id, vendor_id, comment, account_id) = ($1, $2, $3, $4, $5) where id = $6;"
-  values = [@amount, @category_id, @vendor_id, @comment, @account_id, @id]
-  sql_result = SqlRunner.run(sql, values)
-end
+  def update()
+    sql = "UPDATE transactions SET (amount, category_id, vendor_id, comment, account_id) = ($1, $2, $3, $4, $5) where id = $6;"
+    values = [@amount, @category_id, @vendor_id, @comment, @account_id, @id]
+    sql_result = SqlRunner.run(sql, values)
+  end
 
 
 end

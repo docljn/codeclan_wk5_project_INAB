@@ -6,10 +6,10 @@ require_relative('../models/account.rb')
 require_relative('../models/transaction.rb')
 
 
-# Transaction.delete_all()
-# Category.delete_all()
-# Vendor.delete_all()
-# Account.delete_all()
+Transaction.delete_all()
+Category.delete_all()
+Vendor.delete_all()
+Account.delete_all()
 
 
 # categories
@@ -44,7 +44,7 @@ amounts = [100, 500, 8700, 300]
 amounts.each do |amount|
   t = Transaction.new({
     'amount' => amount,
-    'category_id' => housekeeping.id,
+    'category_id' => fun.id,
     'vendor_id' => aldi.id,
     'account_id' => hbos.id
     })
