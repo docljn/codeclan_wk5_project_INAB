@@ -48,6 +48,13 @@ class Account
     end
   end
 
+  def transactions()
+    sql = "SELECT * FROM transactions WHERE account_id = $1;"
+    values = [@id]
+    sql_result = SqlRunner.run(sql, values)
+    transactions = sql_result.map {|hash| Transaction.new(hash)}
+  end
+
 
 
   private
