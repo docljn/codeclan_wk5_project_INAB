@@ -40,12 +40,7 @@ class Category
     category = Category.new(sql_result[0])
   end
 
-
-
-
-
   # create & update
-
   def save()
     if @id
       update()
@@ -53,8 +48,6 @@ class Category
       insert()
     end
   end
-
-
 
   private
 

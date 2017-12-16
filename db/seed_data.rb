@@ -20,6 +20,15 @@ car.save()
 fun.save()
 
 
+lidl = Vendor.new({'name' => 'Lidl'})
+aldi = Vendor.new({'name' => 'Aldi'})
+sainsburys = Vendor.new({'name' => 'Sainsburys'})
+waitrose = Vendor.new({'name' => 'Waitrose'})
+
+lidl.save()
+aldi.save()
+sainsburys.save()
+waitrose.save()
 
 
 
