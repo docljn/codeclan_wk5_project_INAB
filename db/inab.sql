@@ -9,18 +9,18 @@ DROP TABLE IF EXISTS categories;
 
 CREATE TABLE categories(
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE vendors(
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255) NOT NULL
 
 );
 
 CREATE TABLE accounts(
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255) NOT NULL
 
 );
 

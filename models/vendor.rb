@@ -1,4 +1,6 @@
 # vendor.rb
+require('pry-byebug')
+
 
 
 

@@ -1,4 +1,5 @@
 # category.rb
+require('pry-byebug')
 
 
 

@@ -1,4 +1,5 @@
 # transaction.rb
+require('pry-byebug')
 
 
 
