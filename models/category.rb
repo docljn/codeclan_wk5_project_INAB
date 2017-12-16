@@ -12,9 +12,21 @@ class Category
     @name = options['name']
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM categories;"
+    sql_result = SqlRunner.run(sql)
+  end
 
-  # CRUD
-  # create
+  def self.delete_one(id)
+    sql = "DELETE FROM categories WHERE id = $1;"
+    values = [id]
+    sql_result = SqlRunner.run(sql, values)
+  end
+
+
+
+
+  # create & update
 
   def save()
     if @id
@@ -24,9 +36,12 @@ class Category
     end
   end
 
+
+
   private
 
   def insert()
+    # create
     sql = "INSERT INTO categories (name) VALUES ($1) RETURNING id;"
     values = [@name]
     sql_result = SqlRunner.run(sql, values)
@@ -34,6 +49,7 @@ class Category
   end
 
   def update()
+    # update
     sql = "UPDATE categories SET (name) = ($1) WHERE id = $2;"
     values = [@name, @id]
     sql_result = SqlRunner.run(sql, values)

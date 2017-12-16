@@ -7,15 +7,21 @@ require_relative('../models/transaction.rb')
 
 
 # categories
+Category.delete_all()
+
 housekeeping = Category.new({'name' => 'housekeeping'})
 gifts = Category.new({'name' => 'gifts'})
 car = Category.new({'name' => 'car'})
-entertainment = Category.new({'name' => 'entertainment'})
+fun = Category.new({'name' => 'fun'})
 
 housekeeping.save()
 gifts.save()
 car.save()
-entertainment.save()
+fun.save()
+
+
+
+
 
 
 # vendors
