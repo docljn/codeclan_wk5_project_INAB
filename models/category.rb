@@ -16,11 +16,27 @@ class Category
   # CRUD
   # create
 
+  def save()
+    if @id
+      update()
+    else
+      insert()
+    end
+  end
+
+  private
+
   def insert()
     sql = "INSERT INTO categories (name) VALUES ($1) RETURNING id;"
     values = [@name]
     sql_result = SqlRunner.run(sql, values)
     @id = sql_result[0]['id']
+  end
+
+  def update()
+    sql = "UPDATE categories SET (name) = ($1) WHERE id = $2;"
+    values = [@name, @id]
+    sql_result = SqlRunner.run(sql, values)
   end
 
 end

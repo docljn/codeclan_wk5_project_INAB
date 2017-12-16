@@ -12,10 +12,10 @@ gifts = Category.new({'name' => 'gifts'})
 car = Category.new({'name' => 'car'})
 entertainment = Category.new({'name' => 'entertainment'})
 
-housekeeping.insert()
-gifts.insert()
-car.insert()
-entertainment.insert()
+housekeeping.save()
+gifts.save()
+car.save()
+entertainment.save()
 
 
 # vendors
