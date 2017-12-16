@@ -18,6 +18,16 @@ class Transaction
   end
 
 def save()
+  if @id
+    insert()
+  else
+    update()
+  end
+end
+
+
+private
+def insert()
   sql = "INSERT INTO transactions
   (amount, category_id, vendor_id, comment, account_id)
   VALUES
@@ -29,7 +39,9 @@ def save()
 end
 
 def update()
-  sql =
+  sql = "UPDATE transactions SET (amount, category_id, vendor_id, comment, account_id) = ($1, $2, $3, $4, $5) where id = $6;"
+  values = [@amount, @category_id, @vendor_id, @comment, @account_id, @id]
+  sql_result = SqlRunner.run(sql, values)
 end
 
 
