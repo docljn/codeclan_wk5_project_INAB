@@ -81,10 +81,6 @@ amounts.each do |amount|
   t.save()
 end
 
-Transaction.total_sql('vendor_id', aldi.id)
-
-
-
 
 # binding.pry
 # nil

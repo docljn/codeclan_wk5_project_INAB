@@ -1,0 +1,24 @@
+<!-- /transactions/index.erb -->
+<h2>All Transactions</h2>
+
+<table>
+  <thead>
+    <th>Vendor</th> <th>Category</th> <th>Amount</th>
+  </thead>
+<% @transactions.each do |transaction| %>
+<tr>
+  <td><%= transaction.vendor() %></td> <td><%= transaction.category() %></td> <td><%= transaction.amount() %></td>
+</tr>
+
+
+<% end %>
+<tr>
+  <td colspan="2">Total:</td> <td><%= Transaction.sum_all() %></td>
+</tr>
+</table>
+
+
+
+
+
+<!-- /transactions/index.erb -->

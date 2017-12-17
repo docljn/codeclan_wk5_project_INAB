@@ -60,6 +60,7 @@ class Transaction
     return sum
   end
 
+
   # def self.total_sql(column, property)
   #   sql = "SELECT SUM(amount) FROM transactions WHERE $1 = $2;"
   #   values = [column, property]
@@ -73,6 +74,22 @@ class Transaction
   # \set foo 'my_table'
   # testdb=> SELECT * FROM :"foo";
 
+
+  # read
+  def vendor()
+    sql = "SELECT * FROM vendors WHERE id = $1;"
+    values = [@vendor_id]
+    sql_result = SqlRunner.run(sql, values)
+    return sql_result[0]['name']
+
+  end
+
+  def category()
+    sql = "SELECT * FROM categories WHERE id = $1;"
+    values = [@category_id]
+    sql_result = SqlRunner.run(sql, values)
+    return sql_result[0]['name']
+  end
 
   # create
   def save()
