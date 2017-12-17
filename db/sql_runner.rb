@@ -21,3 +21,5 @@ class SqlRunner
 
 
   # sql_runner.rb
+
+  # #exec_prepared(statement_name[, params, result_format[, type_map]])

@@ -11,9 +11,9 @@ class Transaction
     @id = options['id'].to_i if options['id']
     @amount = options['amount'].to_i
     @comment = options['comment']
-    @category_id = options['category_id']
-    @vendor_id = options['vendor_id']
-    @account_id = options['account_id']
+    @category_id = options['category_id'].to_i
+    @vendor_id = options['vendor_id'].to_i
+    @account_id = options['account_id'].to_i
     # add date as an extension later: this will be tricky
   end
 
@@ -64,6 +64,8 @@ class Transaction
   #   sql = "SELECT SUM(amount) FROM transactions WHERE $1 = $2;"
   #   values = [column, property]
   #   sql_result = SqlRunner.run(sql, values)
+  #   binding.pry
+  #   nil
   #   return sql_result[0]['sum']
   # end
 
