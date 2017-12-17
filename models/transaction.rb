@@ -46,13 +46,13 @@ class Transaction
   end
 
   # read
-  def self.total_all()
+  def self.sum_all()
     sql = "SELECT SUM(amount) FROM transactions;"
     sql_result = SqlRunner.run(sql)
     total = sql_result[0]['sum'].to_i
   end
 
-  def self.total_filtered(sql_result_array)
+  def self.sum_filtered(sql_result_array)
     sum = 0
     sql_result_array.each do |object|
       sum += object.amount
@@ -60,8 +60,11 @@ class Transaction
     return sum
   end
 
-  # def self.total_filtered(criterion)
-  #   sql = "SELECT SUM(amount) FROM transactions WHERE ;"
+  # def self.total_sql(column, property)
+  #   sql = "SELECT SUM(amount) FROM transactions WHERE $1 = $2;"
+  #   values = [column, property]
+  #   sql_result = SqlRunner.run(sql, values)
+  #   return sql_result[0]['sum']
   # end
 
 

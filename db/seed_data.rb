@@ -51,6 +51,37 @@ amounts.each do |amount|
   t.save()
 end
 
+amounts.each do |amount|
+  t = Transaction.new({
+    'amount' => amount+15,
+    'category_id' => housekeeping.id,
+    'vendor_id' => lidl.id,
+    'account_id' => hbos.id
+    })
+  t.save()
+end
+
+amounts.each do |amount|
+  t = Transaction.new({
+    'amount' => amount+7,
+    'category_id' => gifts.id,
+    'vendor_id' => waitrose.id,
+    'account_id' => hbos.id
+    })
+  t.save()
+end
+
+amounts.each do |amount|
+  t = Transaction.new({
+    'amount' => amount*10,
+    'category_id' => car.id,
+    'vendor_id' => sainsburys.id,
+    'account_id' => hbos.id
+    })
+  t.save()
+end
+
+
 
 
 
