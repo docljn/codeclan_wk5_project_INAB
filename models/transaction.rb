@@ -69,6 +69,10 @@ class Transaction
   #   return sql_result[0]['sum']
   # end
 
+  # from psql docs:
+  # \set foo 'my_table'
+  # testdb=> SELECT * FROM :"foo";
+
 
   # create
   def save()
