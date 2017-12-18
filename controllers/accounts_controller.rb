@@ -30,5 +30,12 @@ get "/accounts/:id/edit" do
   erb(:"/accounts/edit")
 end
 
+# delete
+
+post "/accounts/:id/delete" do
+  Account.delete_one(params["id"])
+  redirect to("/accounts")
+end
+
 
 # accounts_controller.rb
