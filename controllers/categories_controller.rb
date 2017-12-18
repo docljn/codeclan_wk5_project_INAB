@@ -28,7 +28,9 @@ get("/categories/:id/edit") do
 end
 
 post("/categories/:id") do
-  category = Category.
+  category = Category.new(params)
+  category.save()
+  redirect to ("/categories")
 
 end
 

@@ -47,7 +47,8 @@ get "/transactions/:id/edit" do
 end
 
 post "/transactions/:id" do
-  # save changes to edited tx
+  transaction = Transaction.new(params)
+  transaction.save()
   erb(:"/transactions/show")
   # i.e. go to show details
 end
