@@ -38,6 +38,8 @@ waitrose.save()
 # accounts: # extension
 hbos = Account.new({'name' => "Bank of Scotland"})
 hbos.save()
+rbs = Account.new({'name' => "Royal Bank of Scotland"})
+rbs.save()
 
 # transactions
 amounts = [100, 500, 8700, 300]
@@ -66,7 +68,7 @@ amounts.each do |amount|
     'amount' => amount+7,
     'category_id' => gifts.id,
     'vendor_id' => waitrose.id,
-    'account_id' => hbos.id
+    'account_id' => rbs.id
     })
   t.save()
 end
@@ -76,7 +78,7 @@ amounts.each do |amount|
     'amount' => amount*10,
     'category_id' => car.id,
     'vendor_id' => sainsburys.id,
-    'account_id' => hbos.id
+    'account_id' => rbs.id
     })
   t.save()
 end

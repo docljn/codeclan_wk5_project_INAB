@@ -1,0 +1,11 @@
+<h2>Accounts</h2>
+
+<a href="/accounts/new">Add a New Account</a>
+
+<ul>
+  <% @accounts.each do |account| %>
+  <li> <a href="/accounts/<%= account.id %>/edit"> <%= account.name %> </a></li>
+  <% end %>
+</ul>
+
+<!-- something to add a new account here -->
