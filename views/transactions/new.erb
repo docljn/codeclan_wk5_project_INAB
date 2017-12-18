@@ -1,0 +1,45 @@
+<form class="" action="/transactions" method="post">
+
+<div class="">
+  <label for="amount_input">£ </label>
+  <input id="amount_input" type="number" name="amount" value="0" autofocus="autofocus">
+</div>
+
+<div class="">
+  <label for="account_select">Account: </label>
+  <select id="account_select" class="" name="account_id">
+    <% @accounts.each do |account| %>
+      <option value="<%= account.id %>"><%= account.name %></option>
+    <% end %>
+  </select>
+</div>
+
+<div class="">
+  <label for="vendor_select">Vendor: </label>
+  <select id="vendor_select" class="" name="vendor_id">
+    <% @vendors.each do |vendor| %>
+    <option value="<%= vendor.id %>"><%= vendor.name  %></option>
+    <% end %>
+  </select>
+</div>
+
+<div class="">
+  <label for="category_select">Category: </label>
+  <select id="category_select" class="" name="category_id">
+    <% @categories.each do |category| %>
+    <option value="<%= category.id %>"><%= category.name %></option>
+    <% end %>
+  </select>
+</div>
+
+<div class="">
+  <label for="comment_input">Comment: </label>
+  <input id="comment_input" type="text" size="50" name="comment" value="">
+</div>
+
+<div class="">
+  <label for=""></label>
+  <input type="submit" name="Save Transaction" value="Save Transaction">
+</div>
+
+</form>

@@ -1,5 +1,10 @@
 <!-- /transactions/index.erb -->
 <h2>All Transactions</h2>
+<nav>
+  <ul>
+    <li>Filter Transactions</li>
+  </ul>
+</nav>
 
 <table>
   <thead>
@@ -7,16 +12,15 @@
   </thead>
 <% @transactions.each do |transaction| %>
 <tr>
-  <td><%= transaction.vendor() %></td> <td><%= transaction.category() %></td> <td><%= transaction.amount() %></td>
+  <td><%= transaction.vendor().name %></td> <td><%= transaction.category().name %></td> <td><%= transaction.amount() %></td> <td> <a href="/transactions/:id/edit">edit</a> </td>
 </tr>
 
 
 <% end %>
 <tr>
-  <td colspan="2">Total:</td> <td><%= Transaction.sum_all() %></td>
+  <td colspan="2">Total:</td> <td><%= Transaction.sum_all() %></td> <td></td>
 </tr>
 </table>
-
 
 
 

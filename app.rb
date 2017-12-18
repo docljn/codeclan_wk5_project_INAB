@@ -10,8 +10,8 @@ require_relative('./controllers/vendors_controller.rb')
 
 # this will be the home page for the whole app
 # thus 'index'
-# not sure whether to keep this or just go straight to
-# recent transactions page instead.
+# not sure whether to keep this blank or just go straight to
+# 10 most recent transactions instead.
 
 get '/' do
   erb(:index)

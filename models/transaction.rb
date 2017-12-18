@@ -80,7 +80,7 @@ class Transaction
     sql = "SELECT * FROM vendors WHERE id = $1;"
     values = [@vendor_id]
     sql_result = SqlRunner.run(sql, values)
-    return sql_result[0]['name']
+    return Vendor.new(sql_result[0])
 
   end
 
@@ -88,7 +88,7 @@ class Transaction
     sql = "SELECT * FROM categories WHERE id = $1;"
     values = [@category_id]
     sql_result = SqlRunner.run(sql, values)
-    return sql_result[0]['name']
+    return Category.new(sql_result[0])
   end
 
   # create
