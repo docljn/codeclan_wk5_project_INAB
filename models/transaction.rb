@@ -1,5 +1,6 @@
 # transaction.rb
 require('pry-byebug')
+# require('bigdecimal') - recommended for precise calculations, but 12 times slower than float.  Using float for now as database provides precision?
 require_relative('../db/sql_runner.rb')
 
 class Transaction
@@ -9,7 +10,7 @@ class Transaction
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @amount = options['amount'].to_i  #store as pence
+    @amount = options['amount'].to_f
     @comment = options['comment']
     @category_id = options['category_id'].to_i
     @vendor_id = options['vendor_id'].to_i
@@ -121,20 +122,6 @@ class Transaction
     else
       insert()
     end
-  end
-
-  def display_amount()
-    # maybe move to a new 'display class'
-    money_array = @amount.to_s.split(".")
-    pounds = money_array[0]
-    pence = money_array[1]
-    if pence == nil
-      pence = "00"
-    end
-    if pence.length < 2
-      pence = pence + "0"
-    end
-    return "#{pounds}.#{pence}"
   end
 
 
