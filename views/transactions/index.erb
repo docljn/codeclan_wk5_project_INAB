@@ -1,9 +1,23 @@
 <!-- /transactions/index.erb -->
+
+<div class="">
+  <form class="" action="/transactions" method="get">
+    <label for=""></label>
+    <select class="" name="account_id">
+      <% @accounts.each do |account| %>
+      <option value="<%= account.id %>"><%= account.name %></option>
+      <% end %>
+    </select>
+    <input type="submit" name="filter_by_account" value="Filter by Account">
+  </form>
+</div>
+
 <div>
   <form class="" action="/transactions" method="get">
     <label for="select_category"></label>
     <select id="select_category" class="" name="category_id">
       <% @categories.each do |category| %>
+      <!-- WANT A WAY TO HAVE THE CURRENT SELECTION SELECTED? -->
       <option value="<%= category.id %>"><%= category.name %></option>
       <% end %>
     </select>
@@ -11,7 +25,32 @@
   </form>
 </div>
 
-<h2>All Transactions</h2>
+<div class="">
+  <form class="" action="/transactions" method="get">
+    <label for="select_vendor"></label>
+    <select id="select_vendor" class="" name="vendor_id">
+      <% @vendors.each do |vendor| %>
+        <option value="<%= vendor.id %>"><%= vendor.name %></option>
+      <% end %>
+    </select>
+    <input type="submit" name="filter_by_vendor" value="Filter by Vendor">
+  </form>
+</div>
+
+<div class="">
+  <form class="" action="/transactions" method="get">
+    <label for="clear_filters"></label>
+    <input id ="clear_filters" type="submit" name="" value="Clear Filters">
+  </form>
+</div>
+
+
+
+<% if params["account_id"] || params["category_id"] || params["vendor_id"] %>
+  <h2>Filtered Transactions</h2>
+<% else %>
+  <h2>All Transactions</h2>
+<% end %>
 
 <table>
   <thead>

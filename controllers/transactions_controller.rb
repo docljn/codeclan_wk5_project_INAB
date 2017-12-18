@@ -18,6 +18,10 @@ get "/transactions" do
   @accounts = Account.select_all()
   if params["category_id"]
     @transactions = Transaction.select_by_category(params["category_id"])
+  elsif params["vendor_id"]
+    @transactions = Transaction.select_by_vendor(params["vendor_id"])
+  elsif params["account_id"]
+    @transactions = Transaction.select_by_account(params["account_id"])
   else
     @transactions = Transaction.select_all()
   end
