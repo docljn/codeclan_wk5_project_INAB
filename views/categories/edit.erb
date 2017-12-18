@@ -1,0 +1,31 @@
+<!-- categories/edit.erb -->
+
+<h2>Edit Spending Category</h2>
+
+<form class="" action="/categories" method="get">
+  <!-- returns to list of existing categories -->
+  <label for="cancel_action"></label>
+  <input id="cancel_action"type="submit" name="cancel" value="Cancel">
+</form>
+
+<form class="" action="/categories/<%= @category.id %>" method="post">
+  <!-- displays and allows changes to a single category -->
+  <div class="">
+    <label for="category_name_input">Name: </label>
+    <input id="category_name_input" type="text" name="name" value="<%= @category.name %>" autofocus="autofocus">
+  </div>
+  <div class="">
+    <label for="save_category"></label>
+    <input id="save_category" type="submit" name="add_category" value="Save Category">
+  </div>
+
+  <!-- potentially add category budget here -->
+
+
+</form>
+
+<!-- add delete method here? -->
+
+
+
+<!-- categories/edit.erb -->

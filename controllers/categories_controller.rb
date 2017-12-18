@@ -17,6 +17,18 @@ post("/categories") do
   category = Category.new(params)
   category.save
   redirect to("/categories")
+end
+
+
+# edit - two steps
+get("/categories/:id/edit") do
+  @category = Category.select_one(params["id"])
+  erb(:"/categories/edit")
+
+end
+
+post("/categories/:id") do
+  category = Category.
 
 end
 
