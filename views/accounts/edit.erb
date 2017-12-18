@@ -1,1 +1,20 @@
 <h2>Edit Account Details</h2>
+
+<form class="" action="/accounts" method="get">
+  <label for="cancel"></label>
+  <input id="cancel" type="submit" name="" value="Cancel">
+
+</form>
+
+<form class="" action="/accounts/<%= @account.id %>" method="post">
+  <label for="name_input">Name: </label>
+  <input id="name_input" type="text" name="name" value="<%= @account.name %>" autofocus="autofocus">
+
+  <label for=""></label>
+  <input type="submit" name="update_account" value="Update Account">
+</form>
+
+<form class="" action="/accounts/<%= @account.id %>/delete" method="post">
+  <label for=""></label>
+  <input type="submit" name="" value="Delete Account">
+</form>
