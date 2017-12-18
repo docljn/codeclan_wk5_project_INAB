@@ -1,0 +1,73 @@
+<!-- transactions/edit view -->
+
+<form class="" action="/transactions" method="get">
+  <label for="cancel_action"></label>
+  <input id="cancel_action"type="submit" name="cancel" value="Cancel">
+</form>
+
+
+<form class="" action="/transactions" method="post">
+
+  <div class="">
+    <label for="amount_input">£ </label>
+    <input id="amount_input" type="number" name="amount" value="<%= @transaction.amount %>" autofocus="autofocus">
+  </div>
+
+  <div class="">
+    <label for="account_select">Account: </label>
+    <select id="account_select" class="" name="account_id">
+      <% @accounts.each do |account| %>
+        <% if account.id == @transaction.account_id %>
+        <option value="<%= account.id %>" selected><%= account.name %></option>
+        <% else %>
+        <option value="<%= account.id %>"><%= account.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </div>
+
+  </select>
+
+  <div class="">
+    <label for="vendor_select">Vendor: </label>
+    <select id="vendor_select" class="" name="vendor_id">
+      <% @vendors.each do |vendor| %>
+        <% if vendor.id == @transaction.vendor_id %>
+        <option value="<%= vendor.id %>" selected><%= vendor.name  %></option>
+        <% else %>
+        <option value="<%= vendor.id %>"><%= vendor.name  %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="">
+    <label for="category_select">Category: </label>
+    <select id="category_select" class="" name="category_id">
+      <% @categories.each do |category| %>
+        <% if category.id == @transaction.category_id %>
+        <option value="<%= category.id %>" selected><%= category.name %></option>
+        <% else %>
+        <option value="<%= category.id %>"><%= category.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="">
+    <label for="comment_input">Comment: </label>
+    <input id="comment_input" type="text" size="50" name="comment" value="<%= @transaction.comment %>">
+  </div>
+
+  <div class="">
+    <label for=""></label>
+    <input type="submit" name="save_transaction" value="Save Transaction">
+  </div>
+
+</form>
+
+
+<form class="" action="/transactions/<%= @transaction.id %>/delete" method="post">
+  <input type="submit" name="delete_transaction" value="Delete Transaction">
+
+</form>

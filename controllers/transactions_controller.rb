@@ -35,18 +35,29 @@ post "/transactions" do
 end
 
 
-# # edit tx - two parter?
-# get "/transactions/:id/edit" do
-#   # view to allow change to existing tx
-#   erb(:"transactions/edit")
-#
-# end
-#
-# post "/transactions/:id" do
-#   # save changes to edited tx
-#   erb(:"/transactions/show")
-#   # i.e. go to show details
-# end
+# edit tx - two parter?
+get "/transactions/:id/edit" do
+  # view to allow change to existing tx
+  @transaction = Transaction.select_one(params['id'])
+  @vendors = Vendor.select_all()
+  @categories = Category.select_all()
+  @accounts = Account.select_all()
+  erb(:"transactions/edit")
+
+end
+
+post "/transactions/:id" do
+  # save changes to edited tx
+  erb(:"/transactions/show")
+  # i.e. go to show details
+end
+
+
+# delete tx - access from edit page?
+post "/transactions/:id/delete" do
+  Transaction.delete_one(params['id'])
+  redirect to("/transactions")
+end
 
 
 
