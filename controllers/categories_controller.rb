@@ -31,7 +31,13 @@ post("/categories/:id") do
   category = Category.new(params)
   category.save()
   redirect to ("/categories")
+end
 
+# delete
+post("/categories/:id/delete") do
+  # do I not need to generate @category because this is called from a page where @category has already been defined?
+  Category.delete_one(params["id"])
+  redirect to ("/categories")
 end
 
 # categories_controller.rb

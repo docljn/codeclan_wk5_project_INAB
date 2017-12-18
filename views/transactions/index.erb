@@ -1,10 +1,17 @@
 <!-- /transactions/index.erb -->
+<div>
+  <form class="" action="/transactions" method="get">
+    <label for="select_category"></label>
+    <select id="select_category" class="" name="category_id">
+      <% @categories.each do |category| %>
+      <option value="<%= category.id %>"><%= category.name %></option>
+      <% end %>
+    </select>
+    <input type="submit" name="filter_by_category" value="Filter by Category">
+  </form>
+</div>
+
 <h2>All Transactions</h2>
-<nav>
-  <ul>
-    <li> <a href="#">Filter Transactions NO IDEA YET!</a> </li>
-  </ul>
-</nav>
 
 <table>
   <thead>
@@ -18,7 +25,7 @@
 
 <% end %>
 <tr>
-  <td colspan="2">Total:</td> <td><%= Transaction.sum_all() %></td> <td></td>
+  <td colspan="2">Total:</td> <td><%= Transaction.sum_filtered(@transactions) %></td> <td></td>
 </tr>
 </table>
 

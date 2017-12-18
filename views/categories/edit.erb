@@ -25,7 +25,10 @@
 </form>
 
 <!-- add delete method here? -->
-
+<form class="" action="/categories/<%= @category.id %>/delete" method="post">
+  <label for="delete_category"></label>
+  <input id="delete_category" type="submit" name="delete_category" value="Delete Category">
+</form>
 
 
 <!-- categories/edit.erb -->

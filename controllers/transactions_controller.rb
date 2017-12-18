@@ -12,7 +12,15 @@ require_relative("../models/vendor.rb")
 
 get "/transactions" do
   # working
-  @transactions = Transaction.select_all()
+  # add logic here to deal with the filtered transactions
+  @vendors = Vendor.select_all()
+  @categories = Category.select_all()
+  @accounts = Account.select_all()
+  if params["category_id"]
+    @transactions = Transaction.select_by_category(params["category_id"])
+  else
+    @transactions = Transaction.select_all()
+  end
   erb(:"/transactions/index")
 end
 

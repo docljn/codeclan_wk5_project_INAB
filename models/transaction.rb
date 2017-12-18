@@ -37,6 +37,27 @@ class Transaction
     transactions_array = sql_result.map {|hash| Transaction.new(hash)}
   end
 
+  def self.select_by_account(account_id)
+    sql = "SELECT * FROM transactions WHERE account_id = $1;"
+    values = [account_id]
+    sql_result = SqlRunner.run(sql, values)
+    transactions_array = sql_result.map {|hash| Transaction.new(hash)}
+  end
+
+  def self.select_by_category(category_id)
+    sql = "SELECT * FROM transactions WHERE category_id = $1;"
+    values = [category_id]
+    sql_result = SqlRunner.run(sql, values)
+    transactions_array = sql_result.map {|hash| Transaction.new(hash)}
+  end
+
+  def self.select_by_vendor(vendor_id)
+    sql = "SELECT * FROM transactions WHERE vendor_id = $1;"
+    values = [vendor_id]
+    sql_result = SqlRunner.run(sql, values)
+    transactions_array = sql_result.map {|hash| Transaction.new(hash)}
+  end
+
   # read
   def self.select_one(id)
     sql = "SELECT * FROM transactions where id = $1;"
@@ -51,6 +72,7 @@ class Transaction
     sql_result = SqlRunner.run(sql)
     total = sql_result[0]['sum'].to_i
   end
+
 
   def self.sum_filtered(sql_result_array)
     sum = 0
