@@ -71,7 +71,7 @@ class Transaction
   def self.sum_all()
     sql = "SELECT SUM(amount) FROM transactions;"
     sql_result = SqlRunner.run(sql)
-    total = sql_result[0]['sum'].to_i
+    total = sql_result[0]['sum']
   end
 
 
@@ -124,8 +124,16 @@ class Transaction
   end
 
   def display_amount()
-    pounds = (@amount/100).to_i
-    pence = @amount.to_s.slice(-2..-1)
+    # maybe move to a new 'display class'
+    money_array = @amount.to_s.split(".")
+    pounds = money_array[0]
+    pence = money_array[1]
+    if pence == nil
+      pence = "00"
+    end
+    if pence.length < 2
+      pence = pence + "0"
+    end
     return "#{pounds}.#{pence}"
   end
 

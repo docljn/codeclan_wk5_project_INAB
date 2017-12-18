@@ -58,7 +58,7 @@
 
 <table>
   <thead>
-    <th>Vendor</th> <th>Category</th> <th>Amount</th>
+    <th>Vendor</th> <th colspan="2">Category</th> <th>Amount</th>
   </thead>
 <% @transactions.each do |transaction| %>
 <tr>
@@ -68,7 +68,7 @@
 
 <% end %>
 <tr>
-  <td colspan="2">Total:</td> <td><%= Transaction.sum_filtered(@transactions) %></td> <td></td>
+  <td colspan="2">Total:</td> <td>£ </td> <td><%= Transaction.sum_filtered(@transactions) %></td> <td></td>
 </tr>
 </table>
 
