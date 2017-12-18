@@ -9,12 +9,13 @@ class Transaction
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @amount = options['amount'].to_i
+    @amount = options['amount'].to_i  #store as pence
     @comment = options['comment']
     @category_id = options['category_id'].to_i
     @vendor_id = options['vendor_id'].to_i
     @account_id = options['account_id'].to_i
     # add date as an extension later: this will be tricky
+    # @transaction_date = options['transaction_date']
   end
 
   # delete
@@ -120,6 +121,12 @@ class Transaction
     else
       insert()
     end
+  end
+
+  def display_amount()
+    pounds = (@amount/100).to_i
+    pence = @amount.to_s.slice(-2..-1)
+    return "#{pounds}.#{pence}"
   end
 
 

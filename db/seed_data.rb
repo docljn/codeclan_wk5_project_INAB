@@ -42,7 +42,7 @@ rbs = Account.new({'name' => "Royal Bank of Scotland"})
 rbs.save()
 
 # transactions
-amounts = [100, 500, 8700, 300]
+amounts = [1.00, 5.00, 87.00, 3.00]
 amounts.each do |amount|
   t = Transaction.new({
     'amount' => amount,

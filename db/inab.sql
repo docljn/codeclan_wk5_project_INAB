@@ -25,9 +25,9 @@ CREATE TABLE accounts(
 
 CREATE TABLE transactions(
   id SERIAL4 PRIMARY KEY,
-  amount INT4,
+  amount NUMERIC(8,2),
   comment VARCHAR(255),
-  created_date DATE,
+  transaction_date DATE,
   category_id INT4 REFERENCES categories(id),
   vendor_id INT4 REFERENCES vendors(id),
   account_id INT4 REFERENCES accounts(id)

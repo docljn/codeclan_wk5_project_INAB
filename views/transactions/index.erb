@@ -62,7 +62,7 @@
   </thead>
 <% @transactions.each do |transaction| %>
 <tr>
-  <td><%= transaction.vendor().name %></td> <td><%= transaction.category().name %></td> <td><%= transaction.amount() %></td> <td> <a href="/transactions/<%= transaction.id %>/edit">edit</a> </td>
+  <td><%= transaction.vendor().name %></td> <td><%= transaction.category().name %></td> <td>£ </td> <td><%= transaction.display_amount() %></td> <td> <a href="/transactions/<%= transaction.id %>/edit">edit</a> </td>
 </tr>
 
 
