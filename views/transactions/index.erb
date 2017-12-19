@@ -58,17 +58,17 @@
 
 <table>
   <thead>
-    <th>Vendor</th> <th colspan="2">Category</th> <th>Amount</th>
+    <th>Account</th> <th>Vendor</th> <th>Category</th> <th colspan="2">Amount</th>
   </thead>
 <% @transactions.each do |transaction| %>
 <tr>
-  <td><%= transaction.vendor().name %></td> <td><%= transaction.category().name %></td> <td>£ </td> <td><%= Display.amount(transaction.amount) %></td> <td> <a href="/transactions/<%= transaction.id %>/edit">edit</a> </td>
+  <td><%= transaction.account().name %></td> <td><%= transaction.vendor().name %></td> <td><%= transaction.category().name %></td> <td>£ </td> <td><%= Display.amount(transaction.amount) %></td> <td> <a href="/transactions/<%= transaction.id %>/edit">edit</a> </td>
 </tr>
 
 
 <% end %>
 <tr>
-  <td colspan="2">Total:</td> <td>£ </td> <td><%= Display.amount(Transaction.sum_filtered(@transactions)) %></td> <td></td>
+  <td colspan="3">Total:</td> <td>£ </td> <td><%= Display.amount(Transaction.sum_filtered(@transactions)) %></td> <td></td>
 </tr>
 </table>
 

@@ -22,7 +22,12 @@ class TestCategory < MiniTest::Test
     assert_equal('237.05', Display.amount(237.05))
   end
 
-  def test_display_amount_returns_negative_numbers
+  def test_display_amount_returns_negative_numbers__10
+    assert_equal('-10.00', Display.amount(-10))
+  end
+
+  def test_display_amount_returns_negative_numbers__237_05
+    assert_equal('-237.05', Display.amount(-237.05))
   end
 
 end

@@ -45,4 +45,15 @@ class TestTransaction < MiniTest::Test
     assert_equal('too expensive', @transaction.comment)
   end
 
+  def test_transaction_has_no_date_before_save_to_db
+    assert_nil(@transaction.transaction_date)
+  end
+
+  def test_transaction_has_date_after_save_to_db
+    skip
+    # stuck!
+  end
+  
+
+
 end
