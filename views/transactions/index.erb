@@ -62,7 +62,7 @@
   </thead>
 <% @transactions.each do |transaction| %>
 <tr>
-  <td> <%= transaction.transaction_date %></td> <td><%= transaction.account().name %></td> <td><%= transaction.vendor().name %></td> <td><%= transaction.category().name %></td> <td>£ </td> <td><%= Display.amount(transaction.amount) %></td> <td> <a href="/transactions/<%= transaction.id %>/edit">edit</a> </td>
+  <td> <%= Display.date_dmy(transaction.transaction_date) %></td> <td><%= transaction.account().name %></td> <td><%= transaction.vendor().name %></td> <td><%= transaction.category().name %></td> <td>£ </td> <td><%= Display.amount(transaction.amount) %></td> <td> <a href="/transactions/<%= transaction.id %>/edit">edit</a> </td>
 </tr>
 
 
