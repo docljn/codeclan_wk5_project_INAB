@@ -12,6 +12,14 @@
   <input id="name_input" type="text" name="name" value="<%= @vendor.name %>" autofocus="autofocus">
   <label for=""></label>
   <input type="submit" name="update_vendor" value="Save Changes">
+</form>
+
+<h3>Before deleting a vendor:</h3>
+<p>Ensure you have removed all references to that vendor from your transactions.</p>
+
+<form class="" action="/vendors/<%= @vendor.id %>/delete" method="post">
+  <label for=""></label>
+  <input type="submit" name="delete_vendor" value="Delete Vendor">
 
 </form>
 

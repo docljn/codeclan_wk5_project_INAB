@@ -37,7 +37,6 @@ end
 post "/vendors/:id" do
   vendor = Vendor.new(params)
   vendor.save()
-  binding.pry
   redirect to("/vendors")
 end
 

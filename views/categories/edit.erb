@@ -24,7 +24,8 @@
 
 </form>
 
-<!-- add delete method here? -->
+<h3>Before deleting a category:</h3>
+<p>Ensure you have removed all references to that category from your transactions.</p>
 <form class="" action="/categories/<%= @category.id %>/delete" method="post">
   <label for="delete_category"></label>
   <input id="delete_category" type="submit" name="delete_category" value="Delete Category">
