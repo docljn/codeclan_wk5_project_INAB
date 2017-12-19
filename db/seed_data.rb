@@ -48,7 +48,8 @@ amounts.each do |amount|
     'amount' => amount,
     'category_id' => fun.id,
     'vendor_id' => aldi.id,
-    'account_id' => hbos.id
+    'account_id' => hbos.id,
+    'transaction_date' => "2016-12-15"
     })
   t.save()
 end

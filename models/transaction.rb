@@ -35,7 +35,7 @@ class Transaction
 
   # read
   def self.select_all()
-    sql = "SELECT * FROM transactions;"
+    sql = "SELECT * FROM transactions ORDER BY transaction_date;"
     sql_result = SqlRunner.run(sql)
     transactions_array = sql_result.map {|hash| Transaction.new(hash)}
   end
@@ -136,12 +136,15 @@ class Transaction
 
   private
   def insert()
+    if @transaction_date == nil
+      @transaction_date = RecordDate.today
+    end
     sql = "INSERT INTO transactions
     (amount, category_id, vendor_id, comment, account_id, transaction_date)
     VALUES
     ($1, $2, $3, $4, $5, $6)
     RETURNING id;"
-    values = [@amount, @category_id, @vendor_id, @comment, @account_id, RecordDate.today]
+    values = [@amount, @category_id, @vendor_id, @comment, @account_id, @transaction_date]
     sql_result = SqlRunner.run(sql, values)
     @id = sql_result[0]['id']
   end
