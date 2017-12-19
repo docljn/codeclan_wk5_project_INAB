@@ -23,6 +23,11 @@ gifts.save()
 car.save()
 fun.save()
 
+[housekeeping, gifts, car, fun].each do |category|
+  category.budget = 100
+  category.save()
+end
+
 # vendors
 lidl = Vendor.new({'name' => 'Lidl'})
 aldi = Vendor.new({'name' => 'Aldi'})

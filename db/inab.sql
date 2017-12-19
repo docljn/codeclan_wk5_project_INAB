@@ -9,7 +9,8 @@ DROP TABLE IF EXISTS categories;
 
 CREATE TABLE categories(
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255) NOT NULL
+  name VARCHAR(255) NOT NULL,
+  budget NUMERIC(8,2)
 );
 
 CREATE TABLE vendors(

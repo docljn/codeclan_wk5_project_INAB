@@ -5,11 +5,12 @@ require_relative('../db/sql_runner.rb')
 class Category
 
   attr_reader :id
-  attr_accessor :name
+  attr_accessor :name, :budget
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @budget = options['budget']
   end
 
   # delete
@@ -49,6 +50,9 @@ class Category
     end
   end
 
+  def set_budget()
+  end
+
   def transactions()
     sql = "SELECT * FROM transactions WHERE category_id = $1;"
     values = [@id]
@@ -63,16 +67,16 @@ class Category
 
   def insert()
     # create
-    sql = "INSERT INTO categories (name) VALUES ($1) RETURNING id;"
-    values = [@name]
+    sql = "INSERT INTO categories (name, budget) VALUES ($1, $2) RETURNING id;"
+    values = [@name, @budget]
     sql_result = SqlRunner.run(sql, values)
     @id = sql_result[0]['id']
   end
 
   def update()
     # update
-    sql = "UPDATE categories SET (name) = ($1) WHERE id = $2;"
-    values = [@name, @id]
+    sql = "UPDATE categories SET (name, budget) = ($1, $2) WHERE id = $3;"
+    values = [@name, @budget, @id]
     sql_result = SqlRunner.run(sql, values)
   end
 

@@ -22,7 +22,7 @@ class TestTransaction < MiniTest::Test
       })
 
     @transaction = Transaction.new({
-      'amount' => 100,
+      'amount' => 100.35,
       'comment' => 'too expensive',
       'category_id' => @category.id,
       'vendor_id' => @vendor.id
@@ -30,7 +30,7 @@ class TestTransaction < MiniTest::Test
   end
 
   def test_transaction_has_amount
-    assert_equal(100, @transaction.amount)
+    assert_equal(100.35, @transaction.amount)
   end
 
   def test_transaction_has_category_id
