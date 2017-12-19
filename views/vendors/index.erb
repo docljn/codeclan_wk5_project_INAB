@@ -1,6 +1,21 @@
 <!-- /vendors/index.erb -->
-Vendors index
+<h2>Vendors</h2>
 
+<p> <a href="/vendors/new">Add a new vendor</a></p>
+
+<h2>Spending Summary</h2>
+<table>
+  <thead>
+    <th>Vendor</th> <th colspan="2">Total Spend</th>
+  </thead>
+  <tbody>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor.name %></td><td>£</td><td><%= Display.amount(Transaction.sum_by_vendor(vendor.id)) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 
 

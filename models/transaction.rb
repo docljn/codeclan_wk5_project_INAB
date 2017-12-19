@@ -91,6 +91,12 @@ class Transaction
     return sum
   end
 
+  def self.sum_by_vendor(vendor_id)
+    transactions = Transaction.select_by_vendor(vendor_id)
+    sum = Transaction.sum_filtered(transactions)
+    return sum
+  end
+
 
 
   # def self.total_sql(column, property)
