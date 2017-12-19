@@ -85,6 +85,13 @@ class Transaction
     return sum
   end
 
+  def self.sum_by_category(category_id)
+    transactions = Transaction.select_by_category(category_id)
+    sum = Transaction.sum_filtered(transactions)
+    return sum
+  end
+
+
 
   # def self.total_sql(column, property)
   #   sql = "SELECT SUM(amount) FROM transactions WHERE $1 = $2;"
