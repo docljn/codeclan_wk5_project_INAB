@@ -61,6 +61,13 @@ class Transaction
     transactions_array = sql_result.map {|hash| Transaction.new(hash)}
   end
 
+  def self.select_by_date_range(date1, date2)
+    sql = "SELECT * FROM transactions WHERE transaction_date BETWEEN $1 AND $2 ORDER BY transaction_date;"
+    values = [date1, date2]
+    sql_result = SqlRunner.run(sql, values)
+    transactions_array = sql_result.map {|hash| Transaction.new(hash)}
+  end
+
   # read
   def self.select_one(id)
     sql = "SELECT * FROM transactions where id = $1;"
