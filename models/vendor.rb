@@ -71,7 +71,7 @@ class Vendor
 
   def update()
     # update
-    sql = "UPDATE categories SET (name) = ($1) WHERE id = $2;"
+    sql = "UPDATE vendors SET (name) = ($1) WHERE id = $2;"
     values = [@name, @id]
     sql_result = SqlRunner.run(sql, values)
   end

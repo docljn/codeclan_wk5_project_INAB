@@ -5,10 +5,13 @@
 <form class="" action="/vendors" method="get">
   <label for=""></label>
   <input type="submit" name="" value="Cancel">
-
 </form>
 
 <form class="" action="/vendors/<%= @vendor.id %>" method="post">
+  <label for="name_input">Name: </label>
+  <input id="name_input" type="text" name="name" value="<%= @vendor.name %>" autofocus="autofocus">
+  <label for=""></label>
+  <input type="submit" name="update_vendor" value="Save Changes">
 
 </form>
 

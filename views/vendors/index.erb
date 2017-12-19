@@ -11,7 +11,7 @@
   <tbody>
     <% @vendors.each do |vendor| %>
       <tr>
-        <td><%= vendor.name %></td><td>£</td><td><%= Display.amount(Transaction.sum_by_vendor(vendor.id)) %></td>
+        <td> <a href="/vendors/<%= vendor.id %>/edit"><%= vendor.name %></a> </td><td>£</td><td><%= Display.amount(Transaction.sum_by_vendor(vendor.id)) %></td>
       </tr>
     <% end %>
   </tbody>

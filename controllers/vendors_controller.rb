@@ -30,8 +30,15 @@ end
 # edit
 
 get "/vendors/:id/edit" do
-  @vendor = Vendor.new(params['id'])
+  @vendor = Vendor.select_one(params["id"])
   erb(:"/vendors/edit")
+end
+
+post "/vendors/:id" do
+  vendor = Vendor.new(params)
+  vendor.save()
+  binding.pry
+  redirect to("/vendors")
 end
 
 
