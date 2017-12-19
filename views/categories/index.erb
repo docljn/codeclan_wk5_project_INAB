@@ -3,8 +3,29 @@
 
 <a href="/categories/new">Add a New Category</a>
 
-<ul>
-  <% @categories.each do |category| %>
-  <li> <a href="/categories/<%= category.id %>/edit"><%= category.name %></a> </li>
-  <% end %>
-</ul>
+
+<!-- <form class="" action="/categories/< % "SOMETHING" %>/edit" method="get">
+  <label for=""></label>
+  <select class="" name="">
+    < % @categories.each do |category| %>
+    <option value="< %= category.id %>">< %= category.name %></option>
+    < % end %>
+  </select>
+  <label for=""></label>
+  <input type="submit" name="" value="Edit Category">
+
+</form> -->
+
+<h2>Spending Summary</h2>
+<table>
+  <thead>
+    <th>Category</th> <th>Remaining</th> <th colspan="2">Total Spend</th>
+  </thead>
+  <tbody>
+    <tr>
+      <% @categories.each do |category| %>
+      <td><a href="/categories/<%= category.id %>/edit"><%= category.name %></a></td> <td>TO DO</td> <td>£</td> <td><%= Display.amount(Transaction.sum_by_category(category.id)) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
