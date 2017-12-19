@@ -41,21 +41,21 @@ class Transaction
   end
 
   def self.select_by_account(account_id)
-    sql = "SELECT * FROM transactions WHERE account_id = $1;"
+    sql = "SELECT * FROM transactions WHERE account_id = $1 ORDER BY transaction_date;"
     values = [account_id]
     sql_result = SqlRunner.run(sql, values)
     transactions_array = sql_result.map {|hash| Transaction.new(hash)}
   end
 
   def self.select_by_category(category_id)
-    sql = "SELECT * FROM transactions WHERE category_id = $1;"
+    sql = "SELECT * FROM transactions WHERE category_id = $1 ORDER BY transaction_date;"
     values = [category_id]
     sql_result = SqlRunner.run(sql, values)
     transactions_array = sql_result.map {|hash| Transaction.new(hash)}
   end
 
   def self.select_by_vendor(vendor_id)
-    sql = "SELECT * FROM transactions WHERE vendor_id = $1;"
+    sql = "SELECT * FROM transactions WHERE vendor_id = $1 ORDER BY transaction_date;"
     values = [vendor_id]
     sql_result = SqlRunner.run(sql, values)
     transactions_array = sql_result.map {|hash| Transaction.new(hash)}
@@ -103,21 +103,21 @@ class Transaction
   # read
   # CONSIDER REFACTORING VIEW TO USE CLASS METHODS FOR EACH OF THESE!
   def category()
-    sql = "SELECT * FROM categories WHERE id = $1;"
+    sql = "SELECT * FROM categories WHERE id = $1 ORDER BY name;"
     values = [@category_id]
     sql_result = SqlRunner.run(sql, values)
     return Category.new(sql_result[0])
   end
 
   def account()
-    sql = "SELECT * FROM accounts WHERE id = $1;"
+    sql = "SELECT * FROM accounts WHERE id = $1 ORDER BY name;"
     values = [@account_id]
     sql_result = SqlRunner.run(sql, values)
     return Account.new(sql_result[0])
   end
 
   def vendor()
-    sql = "SELECT * FROM vendors WHERE id = $1;"
+    sql = "SELECT * FROM vendors WHERE id = $1 ORDER BY name;"
     values = [@vendor_id]
     sql_result = SqlRunner.run(sql, values)
     return Vendor.new(sql_result[0])
