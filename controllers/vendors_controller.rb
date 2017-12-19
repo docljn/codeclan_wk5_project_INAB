@@ -8,6 +8,11 @@ require("pry-byebug")
 # require_relative("../models/transaction.rb")
 require_relative("../models/vendor.rb")
 
+get "/vendors" do
+  @vendors = Vendor.select_all()
+  erb(:"/vendors/index")
+end
+
 
 
 
