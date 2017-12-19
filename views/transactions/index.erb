@@ -1,5 +1,7 @@
 <!-- /transactions/index.erb -->
 
+<!-- TODO: filter by DATE -->
+
 <div class="">
   <form class="" action="/transactions" method="get">
     <label for=""></label>
@@ -44,19 +46,12 @@
   </form>
 </div>
 
-
-
-<% if params["account_id"] || params["category_id"] || params["vendor_id"] %>
-  <h2>Filtered Transactions</h2>
-<% else %>
-  <h2>All Transactions</h2>
-<% end %>
-
-<a href="/transactions/new">Add a New Transaction</a>
-
-
-
 <table>
+  <caption><% if params["account_id"] || params["category_id"] || params["vendor_id"] %>
+    Filtered Transactions
+  <% else %>
+    All Transactions
+  <% end %></caption>
   <thead>
     <th>Date</th> <th>Account</th> <th>Vendor</th> <th>Category</th> <th colspan="2">Amount</th>
   </thead>

@@ -2,10 +2,10 @@
 
 <a href="/accounts/new">Add a New Account</a>
 
+<!-- refactor to include account name and balance? -->
+
 <ul>
   <% @accounts.each do |account| %>
   <li> <a href="/accounts/<%= account.id %>/edit"> <%= account.name %> </a></li>
   <% end %>
 </ul>
-
-<!-- something to add a new account here -->

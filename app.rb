@@ -19,6 +19,9 @@ require_relative('./controllers/budgets_controller.rb')
 p "This is process #{Process.pid}"
 
 get '/' do
+  @transactions = Transaction.select_all()
+  @categories = Category.select_all()
+  @accounts = Account.select_all()
   erb(:index)
 end
 
