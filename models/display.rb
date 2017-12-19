@@ -13,4 +13,6 @@ class Display
     return "#{pounds}.#{pence}"
   end
 
+# Date::strptime(your_date_string,"%d-%m-%Y") to correctly parse a date string of format dd-mm-yyyy.
+
 end
