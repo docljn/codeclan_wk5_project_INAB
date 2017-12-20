@@ -1,7 +1,13 @@
-input, select, option {
+/* input {
+  font-size: 1em;
+}
+
+select, option {
+  -webkit-appearance : none;
+  -moz-appearance : none;
   font-size: 1em;
 } */
 
-/* input[type="submit"] {
+ /* input[type="submit"] {
   font-size: 1em;
-}
+} */
