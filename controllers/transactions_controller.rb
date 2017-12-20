@@ -23,6 +23,8 @@ get "/transactions" do
     @transactions = Transaction.select_by_vendor(params["vendor_id"])
   elsif params["account_id"]
     @transactions = Transaction.select_by_account(params["account_id"])
+  elsif params["filter_by_date"]
+    @transactions = Transaction.select_by_date_range(params["date1"], params["date2"])
   else
     @transactions = Transaction.select_all()
   end

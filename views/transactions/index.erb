@@ -6,7 +6,7 @@
     <label for="start_date_input">From </label>
     <input id="start_date_input" type="date" name="date1" value="dd/mm/YYYY" autofocus="autofocus">
     <label for="end_date_input"> to </label>
-    <input id="end_date_input" type="date" name="dates" value="dd/mm/YYYY">
+    <input id="end_date_input" type="date" name="date2" value="dd/mm/YYYY">
     <label for=""></label>
     <input type="submit" name="filter_by_date" value="Filter by Date Range">
 
@@ -59,7 +59,7 @@
 
 <table>
   <!-- Will need to add logic to deal with date filtering -->
-  <caption><% if params["account_id"] || params["category_id"] || params["vendor_id"] %>
+  <caption><% if params["account_id"] || params["category_id"] || params["vendor_id"] || params["filter_by_date"]%>
     Filtered Transactions
   <% else %>
     All Transactions
