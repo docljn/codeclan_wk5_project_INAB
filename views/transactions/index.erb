@@ -29,6 +29,7 @@
       <form class="" action="/transactions" method="get">
         <label for=""></label>
         <select class="" name="account_id">
+          <option value=""></option>
           <% @accounts.each do |account| %>
           <option value="<%= account.id %>"><%= account.name %></option>
           <% end %>
@@ -41,6 +42,7 @@
       <form class="" action="/transactions" method="get">
         <label for="select_category"></label>
         <select id="select_category" class="" name="category_id">
+          <option value=""></option>
           <% @categories.each do |category| %>
           <!-- WANT A WAY TO HAVE THE CURRENT SELECTION SELECTED? -->
           <option value="<%= category.id %>"><%= category.name %></option>
@@ -54,6 +56,7 @@
       <form class="" action="/transactions" method="get">
         <label for="select_vendor"></label>
         <select id="select_vendor" class="" name="vendor_id">
+          <option value=""></option>
           <% @vendors.each do |vendor| %>
           <option value="<%= vendor.id %>"><%= vendor.name %></option>
           <% end %>

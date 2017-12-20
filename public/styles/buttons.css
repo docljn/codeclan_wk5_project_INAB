@@ -1,7 +1,7 @@
-/* input {
-  font-size: 2em;
+input, select, option {
+  font-size: 1em;
 } */
 
 /* input[type="submit"] {
   font-size: 1em;
-} */
+}

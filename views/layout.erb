@@ -15,8 +15,9 @@
     <div class="wrapper">
 
       <nav>
-        <ul>
-          <li> <a href="/">Home</a> </li>
+        <ul class="flex flex--space-between">
+          <li> <a href="/"> <img src="/images/money_tree_small.jpg" alt="link to home page with picture of money tree"></a> </li>
+          <li><% time = Time.now %>It's <%= time.strftime("%c") %> - budget time!</li>
         </ul>
         <ul class="flex flex--space-between">
           <li> <a href="/transactions">Transactions</a> </li>
