@@ -156,7 +156,7 @@ class Transaction
 
   private
   def insert()
-    if @transaction_date == nil
+    if @transaction_date == nil or @transaction_date == ""
       @transaction_date = RecordDate.today
     end
     sql = "INSERT INTO transactions
