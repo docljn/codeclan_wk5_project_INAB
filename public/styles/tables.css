@@ -1,20 +1,23 @@
 table {
   padding: 12px;
-  border: 1px dashed black;
-}
-
-caption {
-  font-size: 1.6em;
-  border: 1px dotted black;
+  border: 0;
 }
 
 thead {
   font-size: 1.2em;
+  background-color: lightgrey;
+}
+
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+th {
+  padding: 8px;
 }
 
 td {
   font-size: 1em;
   font-weight: 100;
-  padding: 8px;
-  border: 1px solid black;
+  padding: 4px 8px;
 }

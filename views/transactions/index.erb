@@ -1,7 +1,7 @@
 <!-- /transactions/index.erb -->
 
 <fieldset>
-  <caption>Filter Transactions</caption>
+  <legend>Filter Transactions</legend>
 
   <div class="">
     <form class="" action="/transactions" method="get">
@@ -10,7 +10,7 @@
     </form>
   </div>
 
-  
+
 <div class="">
   <form class="" action="/transactions" method="get">
     <label for="start_date_input">From </label>
@@ -66,11 +66,11 @@
 
 <table>
   <!-- Will need to add logic to deal with date filtering -->
-  <caption><% if params["account_id"] || params["category_id"] || params["vendor_id"] || params["filter_by_date"]%>
+  <legend><% if params["account_id"] || params["category_id"] || params["vendor_id"] || params["filter_by_date"]%>
     Filtered Transactions
     <% else %>
     All Transactions
-    <% end %></caption>
+    <% end %></legend>
     <thead>
       <tr>
         <th>Date</th> <th>Account</th> <th>Vendor</th> <th>Category</th> <th colspan="2">Amount</th>
