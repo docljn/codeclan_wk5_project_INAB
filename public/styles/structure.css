@@ -4,6 +4,15 @@
   padding: 0;
 }
 
+fieldset {
+  margin-top: 12px;
+  margin-bottom: 18px;
+}
+
+fieldset legend {
+  font-size: 1.2em;
+  margin-left: 4px;
+}
 
 footer {
   font-size: small;
@@ -17,11 +26,6 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-}
-
-input,
-select {
-  font-size: 1em;
 }
 
 
