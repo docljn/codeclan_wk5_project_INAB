@@ -156,6 +156,7 @@ class Transaction
 
   private
   def insert()
+    # this may not be necessary now that I have a default date in the date entry box
     if @transaction_date == nil or @transaction_date == ""
       @transaction_date = RecordDate.today
     end
