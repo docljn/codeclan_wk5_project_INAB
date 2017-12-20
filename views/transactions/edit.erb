@@ -10,7 +10,7 @@
 
   <div class="">
     <label for="amount_input">£ </label>
-    <input id="amount_input" type="number" name="amount" value="<%= @transaction.amount %>" autofocus="autofocus">
+    <input id="amount_input" type="number" name="amount" value="<%= Display.amount(@transaction.amount) %>" step="0.01" autofocus="autofocus">
   </div>
 
   <div class="">

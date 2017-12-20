@@ -16,7 +16,7 @@
   </div>
   <div class="">
     <label for="category_budget_input">Budget: </label>
-    <input id="category_budget_input" type="number" name="budget" value="<%= @category.budget %>">
+    <input id="category_budget_input" type="number" name="budget" value="<%= Display.amount(@category.budget) %> step="0.01">
   </div>
   <div class="">
     <label for="save_category"></label>

@@ -8,7 +8,7 @@
     <tr>
       <% @categories.each do |category| %>
       <% total_spent = Transaction.sum_by_category(category.id) %>
-      <td><a href="/categories/<%= category.id %>/edit"><%= category.name %></a></td> <td>£</td> <td><%= Display.amount( - total_spent) %></td> <td>£</td> <td><%= Display.amount(total_spent) %></td>
+      <td><a href="/categories/<%= category.id %>/edit"><%= category.name %></a></td> <td>£</td> <td><%= Display.amount(category.budget - total_spent) %></td> <td>£</td> <td><%= Display.amount(total_spent) %></td>
     </tr>
     <% end %>
   </tbody>

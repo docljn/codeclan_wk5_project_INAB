@@ -27,6 +27,7 @@ end
 # edit - two steps
 get("/categories/:id/edit") do
   @category = Category.select_one(params["id"])
+  @transactions = Transaction.select_all()
   erb(:"/categories/edit")
 
 end
