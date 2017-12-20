@@ -28,7 +28,7 @@ class Category
 
   # read
   def self.select_all()
-    sql = "SELECT * FROM categories;"
+    sql = "SELECT * FROM categories ORDER BY name;"
     sql_result = SqlRunner.run(sql)
     categories_array = sql_result.map {|hash| Category.new(hash)}
   end
@@ -54,7 +54,7 @@ class Category
   end
 
   def transactions()
-    sql = "SELECT * FROM transactions WHERE category_id = $1;"
+    sql = "SELECT * FROM transactions WHERE category_id = $1 ORDER BY transation_date;"
     values = [@id]
     sql_result = SqlRunner.run(sql, values)
     transactions = sql_result.map {|hash| Transaction.new(hash)}
