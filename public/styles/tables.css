@@ -1,0 +1,16 @@
+table {
+  padding: 4px;
+}
+
+caption {
+  font-size: 1.6em;
+}
+
+thead {
+  font-size: 1.2em;
+}
+
+td {
+  font-size: 1em;
+  font-weight: 100;
+}

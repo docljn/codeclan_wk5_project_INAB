@@ -42,7 +42,7 @@
     <label for="select_vendor"></label>
     <select id="select_vendor" class="" name="vendor_id">
       <% @vendors.each do |vendor| %>
-        <option value="<%= vendor.id %>"><%= vendor.name %></option>
+      <option value="<%= vendor.id %>"><%= vendor.name %></option>
       <% end %>
     </select>
     <input type="submit" name="filter_by_vendor" value="Filter by Vendor">
@@ -60,25 +60,27 @@
   <!-- Will need to add logic to deal with date filtering -->
   <caption><% if params["account_id"] || params["category_id"] || params["vendor_id"] || params["filter_by_date"]%>
     Filtered Transactions
-  <% else %>
+    <% else %>
     All Transactions
-  <% end %></caption>
-  <thead>
-    <th>Date</th> <th>Account</th> <th>Vendor</th> <th>Category</th> <th colspan="2">Amount</th>
-  </thead>
-<% @transactions.each do |transaction| %>
-<tr>
-  <td> <%= Display.date_dmy(transaction.transaction_date) %></td> <td><%= transaction.account().name %></td> <td><%= transaction.vendor().name %></td> <td><%= transaction.category().name %></td> <td>£ </td> <td><%= Display.amount(transaction.amount) %></td> <td> <a href="/transactions/<%= transaction.id %>/edit">edit</a> </td>
-</tr>
+    <% end %></caption>
+    <thead>
+      <tr>
+        <th>Date</th> <th>Account</th> <th>Vendor</th> <th>Category</th> <th colspan="2">Amount</th>
+      </tr>
+    </thead>
+    <% @transactions.each do |transaction| %>
+    <tr>
+      <td> <%= Display.date_dmy(transaction.transaction_date) %></td> <td><%= transaction.account().name %></td> <td><%= transaction.vendor().name %></td> <td><%= transaction.category().name %></td> <td>£ </td> <td><%= Display.amount(transaction.amount) %></td> <td> <a href="/transactions/<%= transaction.id %>/edit">edit</a> </td>
+    </tr>
 
 
-<% end %>
-<tr>
-  <td colspan="4">Total:</td> <td>£ </td> <td><%= Display.amount(Transaction.sum_filtered(@transactions)) %></td> <td></td>
-</tr>
-</table>
+    <% end %>
+    <tr>
+      <td colspan="4">Total:</td> <td>£ </td> <td><%= Display.amount(Transaction.sum_filtered(@transactions)) %></td> <td></td>
+    </tr>
+  </table>
 
 
 
 
-<!-- /transactions/index.erb -->
+  <!-- /transactions/index.erb -->
