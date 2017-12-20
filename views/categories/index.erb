@@ -2,12 +2,13 @@
 <table>
   <caption>Spending by Category</caption>
   <thead>
-    <th>Category</th> <th>Remaining</th> <th colspan="2">Total Spend</th>
+    <th>Category</th> <th colspan="2">Remaining</th> <th colspan="2">Total Spend</th>
   </thead>
   <tbody>
     <tr>
       <% @categories.each do |category| %>
-      <td><a href="/categories/<%= category.id %>/edit"><%= category.name %></a></td> <td>TO DO</td> <td>£</td> <td><%= Display.amount(Transaction.sum_by_category(category.id)) %></td>
+      <% total_spent = Transaction.sum_by_category(category.id) %>
+      <td><a href="/categories/<%= category.id %>/edit"><%= category.name %></a></td> <td>£</td> <td><%= Display.amount( - total_spent) %></td> <td>£</td> <td><%= Display.amount(total_spent) %></td>
     </tr>
     <% end %>
   </tbody>
