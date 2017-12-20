@@ -174,6 +174,7 @@ class Transaction
     sql = "UPDATE transactions SET (amount, category_id, vendor_id, comment, account_id) = ($1, $2, $3, $4, $5) where id = $6;"
     values = [@amount, @category_id, @vendor_id, @comment, @account_id, @id]
     sql_result = SqlRunner.run(sql, values)
+    binding.pry
   end
 
 
