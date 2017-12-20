@@ -10,8 +10,15 @@
     <tr>
       <% @categories.each do |category| %>
       <% total_spent = Transaction.sum_by_category(category.id) %>
-      <td><a href="/categories/<%= category.id %>/edit"><%= category.name %></a></td> <td>£</td> <td class="align-right"><%= Display.amount(category.budget - total_spent) %></td> <td>£</td> <td class="align-right"><%= Display.amount(total_spent) %></td>
+      <% budget_remaining = category.budget - total_spent %>
+      <td><a href="/categories/<%= category.id %>/edit"><%= category.name %></a></td> <td>£</td> <td class="align-right <%= "warning" if budget_remaining < 0 %>"><%= Display.amount(budget_remaining) %></td> <td>£</td> <td class="align-right"><%= Display.amount(total_spent) %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+
+<!-- thinking!
+if amount < 0
+ "warning"
+end -->

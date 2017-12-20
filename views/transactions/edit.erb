@@ -66,13 +66,13 @@
 
   <div class="">
     <label for=""></label>
-    <input type="submit" name="save_transaction" value="Save Changes">
+    <input class="confirm" type="submit" name="save_transaction" value="Save Changes">
   </div>
 
 </form>
 
 
 <form class="" action="/transactions/<%= @transaction.id %>/delete" method="post">
-  <input type="submit" name="delete_transaction" value="Delete Transaction">
+  <input class="warning" type="submit" name="delete_transaction" value="Delete Transaction">
 
 </form>
