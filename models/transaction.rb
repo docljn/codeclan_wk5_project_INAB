@@ -171,10 +171,9 @@ class Transaction
   end
 
   def update()
-    sql = "UPDATE transactions SET (amount, category_id, vendor_id, comment, account_id) = ($1, $2, $3, $4, $5) where id = $6;"
-    values = [@amount, @category_id, @vendor_id, @comment, @account_id, @id]
+    sql = "UPDATE transactions SET (amount, category_id, vendor_id, comment, account_id, transaction_date) = ($1, $2, $3, $4, $5, $6) where id = $7;"
+    values = [@amount, @category_id, @vendor_id, @comment, @account_id, @transaction_date, @id]
     sql_result = SqlRunner.run(sql, values)
-    binding.pry
   end
 
 
