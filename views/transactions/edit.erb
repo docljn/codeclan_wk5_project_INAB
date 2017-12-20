@@ -1,9 +1,13 @@
 <!-- transactions/edit view -->
 
-<form class="" action="/transactions" method="get">
-  <label for="cancel_action"></label>
-  <input id="cancel_action"type="submit" name="cancel" value="Cancel">
-</form>
+
+<fieldset>
+  <caption>Edit Transaction</caption>
+
+  <form class="" action="/transactions" method="get">
+    <label for="cancel_action"></label>
+    <input id="cancel_action"type="submit" name="cancel" value="Cancel">
+  </form>
 
 
 <form class="" action="/transactions/<%= @transaction.id %>" method="post">
@@ -72,7 +76,10 @@
 </form>
 
 
+
 <form class="" action="/transactions/<%= @transaction.id %>/delete" method="post">
   <input class="warning" type="submit" name="delete_transaction" value="Delete Transaction">
 
 </form>
+
+</fieldset>

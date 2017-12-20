@@ -1,11 +1,18 @@
-<h2>Accounts</h2>
+<fieldset>
+  <caption>Accounts</caption>
 
-<a href="/accounts/new">Add a New Account</a>
-
-<!-- refactor to include account name and balance? -->
-
-<ul>
-  <% @accounts.each do |account| %>
-  <li> <a href="/accounts/<%= account.id %>/edit"> <%= account.name %> </a></li>
-  <% end %>
-</ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Account Name</th> <th>Sort Code</th> <th>Account Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @accounts.each do |account| %>
+        <td><a href="/accounts/<%= account.id %>/edit"> <%= account.name %></a></td> <td></td> <td></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</fieldset>

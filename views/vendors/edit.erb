@@ -1,18 +1,22 @@
 <!-- vendors/edit.erb -->
 
-<h2>Edit Vendor</h2>
 
-<form class="" action="/vendors" method="get">
-  <label for=""></label>
-  <input type="submit" name="" value="Cancel">
-</form>
 
+<fieldset>
+  <caption>Edit Vendor</caption>
 <form class="" action="/vendors/<%= @vendor.id %>" method="post">
   <label for="name_input">Name: </label>
   <input id="name_input" type="text" name="name" value="<%= @vendor.name %>" autofocus="autofocus">
   <label for=""></label>
   <input class="confirm" type="submit" name="update_vendor" value="Save Changes">
 </form>
+
+<form class="" action="/vendors" method="get">
+  <label for=""></label>
+  <input type="submit" name="" value="Cancel">
+</form>
+
+</fieldset>
 
 <h3>Before deleting a vendor:</h3>
 <p>Ensure you have removed all references to that vendor from your transactions.</p>

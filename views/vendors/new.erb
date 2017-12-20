@@ -1,18 +1,19 @@
 <!-- /vendors/new.erb -->
-<h2>New Vendor</h2>
+<fieldset>
+  <caption>New Vendor</caption>
 
-<form class="" action="/vendors" method="get">
-  <label for=""></label>
-  <input type="submit" name="" value="Cancel">
-</form>
 
-<form class="" action="/vendors" method="post">
-  <label for="name_input">Vendor Name: </label>
-  <input id="name_input" type="text" name="name" value="" autofocus="autofocus" >
-  <label for=""></label>
-  <input  class="confirm" type="submit" name="add_vendor" value="Add Vendor">
-
-</form>
+  <form class="" action="/vendors" method="post">
+    <label for="name_input">Vendor Name: </label>
+    <input id="name_input" type="text" name="name" value="" autofocus="autofocus" >
+    <label for=""></label>
+    <input  class="confirm" type="submit" name="add_vendor" value="Add Vendor">
+  </form>
+  <form class="" action="/vendors" method="get">
+    <label for=""></label>
+    <input type="submit" name="" value="Cancel">
+  </form>
+</fieldset>
 
 
 <!-- /vendors/new.erb -->

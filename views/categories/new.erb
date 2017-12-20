@@ -1,35 +1,32 @@
 <!-- categories/new.erb -->
-
-<h2>Create a new Spending Category</h2>
-
-<form class="" action="/categories" method="get">
-  <!-- returns to list of existing categories -->
-  <label for="cancel_action"></label>
-  <input id="cancel_action"type="submit" name="cancel" value="Cancel">
-</form>
-
+<fieldset>
+  <caption>New Category</caption>
+  <form class="" action="/categories" method="get">
+    <!-- returns to list of existing categories -->
+    <label for="cancel_action"></label>
+    <input id="cancel_action"type="submit" name="cancel" value="Cancel">
+  </form>
 
 
-<form class="" action="/categories" method="post">
-  <div class="">
-    <label for="category_name_input">Name: </label>
-    <input id="category_name_input" type="text" name="name" value="">
-  </div>
 
-  <div class="">
-    <label for="category_budget_input">Budget: </label>
-    <input id="category_budget_input" type="number" name="budget" value="0.00" step="0.01">
-  </div>
+  <form class="" action="/categories" method="post">
+    <div class="">
+      <label for="category_name_input">Name: </label>
+      <input id="category_name_input" type="text" name="name" value="">
+    </div>
 
-  <div class="">
-    <label for="add_category"></label>
-    <input  class="confirm" id="add_category" type="submit" name="add_category" value="Add Category">
-  </div>
+    <div class="">
+      <label for="category_budget_input">Budget: </label>
+      <input id="category_budget_input" type="number" name="budget" value="0.00" step="0.01">
+    </div>
 
-  <!-- potentially add category budget here -->
+    <div class="">
+      <label for="add_category"></label>
+      <input  class="confirm" id="add_category" type="submit" name="add_category" value="Add Category">
+    </div>
 
-
-</form>
+  </form>
+</fieldset>
 
 
 

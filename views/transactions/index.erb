@@ -1,5 +1,16 @@
 <!-- /transactions/index.erb -->
 
+<fieldset>
+  <caption>Filter Transactions</caption>
+
+  <div class="">
+    <form class="" action="/transactions" method="get">
+      <label for="clear_filters"></label>
+      <input id ="clear_filters" type="submit" name="" value="Clear Filters">
+    </form>
+  </div>
+
+  
 <div class="">
   <form class="" action="/transactions" method="get">
     <label for="start_date_input">From </label>
@@ -49,12 +60,9 @@
   </form>
 </div>
 
-<div class="">
-  <form class="" action="/transactions" method="get">
-    <label for="clear_filters"></label>
-    <input id ="clear_filters" type="submit" name="" value="Clear Filters">
-  </form>
-</div>
+
+</fieldset>
+
 
 <table>
   <!-- Will need to add logic to deal with date filtering -->
