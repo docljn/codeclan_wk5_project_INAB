@@ -1,9 +1,12 @@
 table {
-  padding: 4px;
+  padding: 12px;
+  border: 1px dashed black
+
 }
 
 caption {
   font-size: 1.6em;
+  border: 1px dotted black
 }
 
 thead {
@@ -13,4 +16,6 @@ thead {
 td {
   font-size: 1em;
   font-weight: 100;
+  /* padding: 8px; */
+  border: 1px solid black
 }

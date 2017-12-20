@@ -3,14 +3,14 @@
 <table>
   <caption>Spending by Vendor</caption>
   <thead>
-    <tr>    
+    <tr>
     <th>Vendor</th> <th colspan="2">Total Spend</th>
   </thead>
 </tr>
   <tbody>
     <% @vendors.each do |vendor| %>
       <tr>
-        <td> <a href="/vendors/<%= vendor.id %>/edit"><%= vendor.name %></a> </td><td>£</td><td><%= Display.amount(Transaction.sum_by_vendor(vendor.id)) %></td>
+        <td> <a href="/vendors/<%= vendor.id %>/edit"><%= vendor.name %></a> </td><td>£</td><td class="align-right"><%= Display.amount(Transaction.sum_by_vendor(vendor.id)) %></td>
       </tr>
     <% end %>
   </tbody>
