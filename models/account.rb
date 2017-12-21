@@ -41,13 +41,11 @@ class Account
   end
 
   def save()
-    if @name =!nil or @name != ""
       if @id
         update()
       else
         insert()
       end
-    end
   end
 
   def transactions()

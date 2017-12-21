@@ -43,12 +43,10 @@ class Category
 
   # create & update
   def save()
-    if @name =!nil or @name != ""
-      if @id
-        update()
-      else
-        insert()
-      end
+    if @id
+      update()
+    else
+      insert()
     end
   end
 
