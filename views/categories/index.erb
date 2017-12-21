@@ -1,23 +1,33 @@
 <!-- categories/index.erb -->
 <fieldset>
   <legend>Categories</legend>
-<div class="">
+  <div class="">
 
-<table>
-  <thead>
-    <tr>
-      <th>Category</th> <th colspan="2">Remaining</th> <th colspan="2">Total Spend</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <% @categories.each do |category| %>
-      <% total_spent = Transaction.sum_by_category(category.id) %>
-      <% budget_remaining = category.budget - total_spent %>
-      <td><a href="/categories/<%= category.id %>/edit"><%= category.name %></a></td> <td>£</td> <td class="align-right <%= "warning" if budget_remaining < 0 %>"><%= Display.amount(budget_remaining) %></td> <td>£</td> <td class="align-right"><%= Display.amount(total_spent) %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th> <th colspan="2">Available</th> <th colspan="2">Total Spend</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <% @categories.each do |category| %>
+          <% total_spent = Transaction.sum_by_category(category.id) %>
+          <% budget_remaining = category.budget - total_spent %>
+          <td><a href="/categories/<%= category.id %>/edit"><%= category.name %></a></td>
+          <td>£</td>
+          <td class="align-right <%= "warning" if budget_remaining < 0 %>"><%= Display.amount(budget_remaining) %></td>
+          <td>£</td>
+          <td class="align-right"><%= Display.amount(total_spent) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <% available_funds = Category.total_budget() - Transaction.sum_all() %>
+        <tr>
+          <td colspan="3">Budget Remaining</td> <td>£</td> <td class="align-right <%= "warning" if available_funds < 0 %>"><%= Display.amount(available_funds) %></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
 </fieldset>

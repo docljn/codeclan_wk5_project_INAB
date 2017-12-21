@@ -13,6 +13,12 @@ class Category
     @budget = options['budget'].to_f
   end
 
+  def self.total_budget()
+    sql = "SELECT SUM(budget) FROM categories;"
+    sql_result = SqlRunner.run(sql)
+    sum = sql_result[0]['sum'].to_f
+  end
+
   # delete
   def self.delete_all()
     sql = "DELETE FROM categories;"

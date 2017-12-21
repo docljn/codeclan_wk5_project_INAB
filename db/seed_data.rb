@@ -63,7 +63,7 @@ end
 
 amounts.each do |amount|
   t = Transaction.new({
-    'amount' => amount+15,
+    'amount' => amount/4,
     'category_id' => lending.id,
     'vendor_id' => jemma.id,
     'account_id' => hbos.id,

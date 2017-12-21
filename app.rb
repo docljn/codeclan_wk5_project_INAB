@@ -9,7 +9,6 @@ require_relative('./controllers/accounts_controller.rb')
 require_relative('./controllers/categories_controller.rb')
 require_relative('./controllers/transactions_controller.rb')
 require_relative('./controllers/vendors_controller.rb')
-require_relative('./controllers/budgets_controller.rb')
 
 # this will be the home page for the whole app
 # thus 'index'
@@ -22,7 +21,8 @@ get '/' do
   @transactions = Transaction.select_all()
   @categories = Category.select_all()
   @accounts = Account.select_all()
-  erb(:index)
+  # erb(:index)
+  redirect to("/transactions")
 end
 
 

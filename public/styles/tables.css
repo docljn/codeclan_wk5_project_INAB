@@ -5,14 +5,21 @@ table {
   margin: 0;
 }
 
-thead {
-  font-size: 1.2em;
+thead,
+tfoot {
+  /* font-size: 1.2em; */
+  font-weight: 700;
   background-color: lightgrey;
 }
 
-tr:nth-child(even) {
-  background-color: lightgrey;
+tfoot {
+  border-top: 3px solid black;
 }
+
+tr:nth-child(even) {
+  background-color: #eee;
+}
+
 
 th {
   padding: 8px;

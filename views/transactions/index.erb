@@ -65,14 +65,16 @@
   </div>
 </fieldset>
 
-<fieldset>
 
-  <legend><% if params["account_id"] || params["category_id"] || params["vendor_id"] || params["filter_by_date"]%>
-    Filtered Transactions
-    <% else %>
-    All Transactions
-    <% end %></legend>
-    <div class="">
+<div class="flex flex--space-around">
+  <fieldset>
+
+    <legend><% if params["account_id"] || params["category_id"] || params["vendor_id"] || params["filter_by_date"]%>
+      Filtered Transactions
+      <% else %>
+      All Transactions
+      <% end %></legend>
+
 
       <table>
         <thead>
@@ -80,20 +82,32 @@
             <th>Date</th> <th>Account</th> <th>Vendor</th> <th>Category</th> <th colspan="2">Amount</th>
           </tr>
         </thead>
-        <% @transactions.each do |transaction| %>
-        <tr>
-          <td> <%= Display.date_dmy(transaction.transaction_date) %></td> <td><%= transaction.account().name %></td> <td><%= transaction.vendor().name %></td> <td><%= transaction.category().name %></td> <td>£ </td> <td class="align-right"><a href="/transactions/<%= transaction.id %>/edit"><%= Display.amount(transaction.amount)%> </a></td>
-        </tr>
+        <tbody>
+
+          <% @transactions.each do |transaction| %>
+          <tr>
+            <td> <%= Display.date_dmy(transaction.transaction_date) %></td> <td><%= transaction.account().name %></td> <td><%= transaction.vendor().name %></td> <td><%= transaction.category().name %></td> <td>£ </td> <td class="align-right"><a href="/transactions/<%= transaction.id %>/edit"><%= Display.amount(transaction.amount)%> </a></td>
+          </tr>
 
 
-        <% end %>
-        <tr>
-          <td colspan="4">Total:</td> <td>£ </td> <td class="align-right"><%= Display.amount(Transaction.sum_filtered(@transactions)) %></td>
-        </tr>
+          <% end %>
+        </tbody>
+        <tfoot>
+          
+
+          <tr>
+            <td colspan="4">Total:</td> <td>£ </td> <td class="align-right"><%= Display.amount(Transaction.sum_filtered(@transactions)) %></td>
+          </tr>
+        </tfoot>
       </table>
+    </fieldset>
+
+    <div class="">
+      <%= erb(:"/categories/index") %>
     </div>
 
-  </fieldset>
+  </div>
+
 
 
 

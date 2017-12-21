@@ -22,12 +22,11 @@ div {
 }
 
 fieldset {
-  margin-top: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 fieldset > * {
-  padding: 16px;
+  padding: 8px;
 }
 
 fieldset legend {
@@ -78,6 +77,10 @@ nav ul {
 
 .flex--space-between {
   justify-content: space-between;
+}
+
+.flex--space-around {
+  justify-content: space-around;
 }
 
 .padding--4 {

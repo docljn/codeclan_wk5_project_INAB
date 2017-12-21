@@ -80,7 +80,7 @@ class Transaction
   def self.sum_all()
     sql = "SELECT SUM(amount) FROM transactions;"
     sql_result = SqlRunner.run(sql)
-    total = sql_result[0]['sum']
+    sum = sql_result[0]['sum'].to_f
   end
 
 
