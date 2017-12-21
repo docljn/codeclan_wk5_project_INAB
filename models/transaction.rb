@@ -35,34 +35,34 @@ class Transaction
 
   # read
   def self.select_all()
-    sql = "SELECT * FROM transactions ORDER BY transaction_date;"
+    sql = "SELECT * FROM transactions ORDER BY transaction_date DESC;"
     sql_result = SqlRunner.run(sql)
     transactions_array = sql_result.map {|hash| Transaction.new(hash)}
   end
 
   def self.select_by_account(account_id)
-    sql = "SELECT * FROM transactions WHERE account_id = $1 ORDER BY transaction_date;"
+    sql = "SELECT * FROM transactions WHERE account_id = $1 ORDER BY transaction_date DESC;"
     values = [account_id]
     sql_result = SqlRunner.run(sql, values)
     transactions_array = sql_result.map {|hash| Transaction.new(hash)}
   end
 
   def self.select_by_category(category_id)
-    sql = "SELECT * FROM transactions WHERE category_id = $1 ORDER BY transaction_date;"
+    sql = "SELECT * FROM transactions WHERE category_id = $1 ORDER BY transaction_date DESC;"
     values = [category_id]
     sql_result = SqlRunner.run(sql, values)
     transactions_array = sql_result.map {|hash| Transaction.new(hash)}
   end
 
   def self.select_by_vendor(vendor_id)
-    sql = "SELECT * FROM transactions WHERE vendor_id = $1 ORDER BY transaction_date;"
+    sql = "SELECT * FROM transactions WHERE vendor_id = $1 ORDER BY transaction_date DESC;"
     values = [vendor_id]
     sql_result = SqlRunner.run(sql, values)
     transactions_array = sql_result.map {|hash| Transaction.new(hash)}
   end
 
   def self.select_by_date_range(date1, date2)
-    sql = "SELECT * FROM transactions WHERE transaction_date BETWEEN $1 AND $2 ORDER BY transaction_date;"
+    sql = "SELECT * FROM transactions WHERE transaction_date BETWEEN $1 AND $2 ORDER BY transaction_date DESC;"
     values = [date1, date2]
     sql_result = SqlRunner.run(sql, values)
     transactions_array = sql_result.map {|hash| Transaction.new(hash)}
