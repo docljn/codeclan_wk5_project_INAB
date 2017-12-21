@@ -88,7 +88,3 @@ amounts.each do |amount|
     })
   t.save()
 end
-
-
-binding.pry
-nil

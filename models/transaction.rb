@@ -106,20 +106,6 @@ class Transaction
 
 
 
-  # def self.total_sql(column, property)
-  #   sql = "SELECT SUM(amount) FROM transactions WHERE $1 = $2;"
-  #   values = [column, property]
-  #   sql_result = SqlRunner.run(sql, values)
-  #   binding.pry
-  #   nil
-  #   return sql_result[0]['sum']
-  # end
-
-  # from psql docs:
-  # \set foo 'my_table'
-  # testdb=> SELECT * FROM :"foo";
-
-
   # read
   # CONSIDER REFACTORING VIEW TO USE CLASS METHODS FOR EACH OF THESE!
   def category()
