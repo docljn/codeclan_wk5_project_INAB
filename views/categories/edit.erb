@@ -7,8 +7,7 @@
 
       <form class="" action="/categories" method="get">
         <!-- returns to list of existing categories -->
-        <label for="cancel_action"></label>
-        <input  class="button" id="cancel_action"type="submit" name="cancel" value="Cancel">
+        <input  class="button" type="submit" name="cancel" value="Cancel">
       </form>
     </div>
 
@@ -24,8 +23,7 @@
         <input id="category_budget_input" type="number" name="budget" value="<%= Display.amount(@category.budget) %>" step="0.01">
       </div>
       <div class="padding--4">
-        <label for="save_category"></label>
-        <input class="button confirm" id="save_category" type="submit" name="add_category" value="Save Changes">
+        <input class="button confirm" type="submit" name="add_category" value="Save Changes">
       </div>
     </form>
 

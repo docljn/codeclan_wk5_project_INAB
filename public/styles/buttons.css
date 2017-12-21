@@ -1,22 +1,18 @@
-/* input {
-  font-size: 1em;
-}
-*/
 
-
-select, option, input {
-  -webkit-appearance : none;
-  -moz-appearance : none;
-
+.button,
+select,
+option,
+input {
+  display: inline-block;
+  font-size: 0.8rem;
 }
 
 .button {
-  border: 1px solid black;
+  background-color: #eee;
+  border: 1px solid #eee;
   border-radius: 4px;
   color: black;
   cursor: pointer;
-  display: inline-block;
-  font-size: 0.8rem;
   font-weight: 700;
   line-height: 1;
   margin: .25rem 0;
@@ -29,7 +25,8 @@ select, option, input {
 
 .button:hover,
 .button:focus {
-  background-color: grey;
+  background-color: lightgrey;
+  border: 1px solid lightgrey;
 }
 
 
