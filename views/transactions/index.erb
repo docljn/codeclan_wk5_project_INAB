@@ -6,8 +6,7 @@
 
     <div class="padding--4">
       <form class="" action="/transactions" method="get">
-        <!-- <label for="clear_filters"></label> -->
-        <input class="button" id ="clear_filters" type="submit" name="" value="Clear Filters">
+        <input class="button" type="submit" name="" value="Clear Filters">
       </form>
     </div>
 
@@ -18,7 +17,6 @@
         <input id="start_date_input" type="date" name="date1" value="dd/mm/YYYY" autofocus="autofocus">
         <label class="label--autosize" for="end_date_input"> to </label>
         <input id="end_date_input" type="date" name="date2" value="dd/mm/YYYY">
-        <label for=""></label>
         <input class="button" type="submit" name="filter_by_date" value="Filter by Date Range">
 
       </form>
@@ -28,7 +26,6 @@
 
       <div class="padding--4">
         <form class="" action="/transactions" method="get">
-          <label for=""></label>
           <select class="" name="account_id">
             <option value=""></option>
             <% @accounts.each do |account| %>
@@ -41,8 +38,7 @@
 
       <div class="padding--4">
         <form class="" action="/transactions" method="get">
-          <label for="select_category"></label>
-          <select id="select_category" class="" name="category_id">
+          <select class="" name="category_id">
             <option value=""></option>
             <% @categories.each do |category| %>
             <!-- WANT A WAY TO HAVE THE CURRENT SELECTION SELECTED? -->
@@ -55,8 +51,7 @@
 
       <div class="padding--4">
         <form class="" action="/transactions" method="get">
-          <label for="select_vendor"></label>
-          <select id="select_vendor" class="" name="vendor_id">
+          <select class="" name="vendor_id">
             <option value=""></option>
             <% @vendors.each do |vendor| %>
             <option value="<%= vendor.id %>"><%= vendor.name %></option>
