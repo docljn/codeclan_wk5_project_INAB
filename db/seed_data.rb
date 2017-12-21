@@ -13,18 +13,18 @@ Account.delete_all()
 
 
 # categories
-housekeeping = Category.new({'name' => 'housekeeping'})
+lending = Category.new({'name' => 'lending'})
 gifts = Category.new({'name' => 'gifts'})
 car = Category.new({'name' => 'car'})
 fun = Category.new({'name' => 'fun'})
 
-housekeeping.save()
+lending.save()
 gifts.save()
 car.save()
 fun.save()
 
-[housekeeping, gifts, car, fun].each do |category|
-  category.budget = 100
+[gifts, car, fun].each do |category|
+  category.budget = 200
   category.save()
 end
 
@@ -33,11 +33,13 @@ lidl = Vendor.new({'name' => 'Lidl'})
 aldi = Vendor.new({'name' => 'Aldi'})
 sainsburys = Vendor.new({'name' => 'Sainsburys'})
 waitrose = Vendor.new({'name' => 'Waitrose'})
+jemma = Vendor.new({'name' => 'Jemma'})
 
 lidl.save()
 aldi.save()
 sainsburys.save()
 waitrose.save()
+jemma.save()
 
 
 # accounts: # extension
@@ -54,7 +56,7 @@ amounts.each do |amount|
     'category_id' => fun.id,
     'vendor_id' => aldi.id,
     'account_id' => hbos.id,
-    'transaction_date' => "2016-12-15"
+    'transaction_date' => "2017-12-05"
     })
   t.save()
 end
@@ -62,9 +64,11 @@ end
 amounts.each do |amount|
   t = Transaction.new({
     'amount' => amount+15,
-    'category_id' => housekeeping.id,
-    'vendor_id' => lidl.id,
-    'account_id' => hbos.id
+    'category_id' => lending.id,
+    'vendor_id' => jemma.id,
+    'account_id' => hbos.id,
+    'transaction_date' => "2017-12-07"
+
     })
   t.save()
 end
@@ -81,7 +85,7 @@ end
 
 amounts.each do |amount|
   t = Transaction.new({
-    'amount' => amount*10,
+    'amount' => amount*2,
     'category_id' => car.id,
     'vendor_id' => sainsburys.id,
     'account_id' => rbs.id
