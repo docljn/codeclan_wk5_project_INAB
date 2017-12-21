@@ -14,9 +14,9 @@
     <div class="padding--4">
       <form class="" action="/transactions" method="get">
         <label class="label--autosize" for="start_date_input">From </label>
-        <input id="start_date_input" type="date" name="date1" value="dd/mm/YYYY" autofocus="autofocus">
+        <input required id="start_date_input" type="date" name="date1" value="<%=  %>" autofocus="autofocus">
         <label class="label--autosize" for="end_date_input"> to </label>
-        <input id="end_date_input" type="date" name="date2" value="dd/mm/YYYY">
+        <input required id="end_date_input" type="date" name="date2" value="<%=  %>">
         <input class="button" type="submit" name="filter_by_date" value="Filter by Date Range">
 
       </form>
@@ -26,7 +26,7 @@
 
       <div class="padding--4">
         <form class="" action="/transactions" method="get">
-          <select class="" name="account_id">
+          <select required class="" name="account_id">
             <option value=""></option>
             <% @accounts.each do |account| %>
             <option value="<%= account.id %>"><%= account.name %></option>
@@ -38,7 +38,7 @@
 
       <div class="padding--4">
         <form class="" action="/transactions" method="get">
-          <select class="" name="category_id">
+          <select required class="" name="category_id">
             <option value=""></option>
             <% @categories.each do |category| %>
             <!-- WANT A WAY TO HAVE THE CURRENT SELECTION SELECTED? -->
@@ -51,7 +51,7 @@
 
       <div class="padding--4">
         <form class="" action="/transactions" method="get">
-          <select class="" name="vendor_id">
+          <select required class="" name="vendor_id">
             <option value=""></option>
             <% @vendors.each do |vendor| %>
             <option value="<%= vendor.id %>"><%= vendor.name %></option>
@@ -93,7 +93,7 @@
           <% end %>
         </tbody>
         <tfoot>
-          
+
 
           <tr>
             <td colspan="4">Total:</td> <td>£ </td> <td class="align-right"><%= Display.amount(Transaction.sum_filtered(@transactions)) %></td>

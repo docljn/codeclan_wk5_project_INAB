@@ -26,7 +26,7 @@ fieldset {
 }
 
 fieldset > * {
-  padding: 8px;
+  padding: 4px;
 }
 
 fieldset legend {
