@@ -5,19 +5,20 @@
 <head>
   <meta charset="utf-8" lang="en-GB">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/structure.css">
   <link rel="stylesheet" href="/styles/buttons.css">
+  <link rel="stylesheet" href="/styles/forms.css">
+  <link rel="stylesheet" href="/styles/structure.css">
   <link rel="stylesheet" href="/styles/tables.css">
   <title>Project INAB</title>
 </head>
 <body>
-  <header>
-    <div class="wrapper">
+  <div class="wrapper">
+    <header>
 
       <nav>
         <ul class="flex flex--space-between">
           <li> <a href="/"> <img src="/images/money_tree_small.jpg" alt="link to home page with picture of money tree"></a> </li>
-          <li><% time = Time.now %>It's <%= time.strftime("%c") %> - budget time!</li>
+          <li><% time = Time.now %>It's <%= time.strftime("%A, %e %B %Y") %> - budget time!</li>
         </ul>
         <ul class="flex flex--space-between">
           <li> <a href="/transactions">Transactions</a> </li>
@@ -40,11 +41,11 @@
 
     <footer class="flex flex--space-between">
       <div class="">
-      With thanks to the team at <a href="https://www.youneedabudget.com/" target="_blank">YNAB</a> for inspiration.
-    </div>
-    <div class="">
-      <a href="https://github.com/docljn/codeclan_wk5_project_INAB/blob/master/readme.md" target="_blank">GitHub Repo</a>
-    </div>
+        With thanks to the team at <a href="https://www.youneedabudget.com/" target="_blank">YNAB</a> for inspiration.
+      </div>
+      <div class="">
+        <a href="https://github.com/docljn/codeclan_wk5_project_INAB/blob/master/readme.md" target="_blank">GitHub Repo</a>
+      </div>
     </footer>
 
   </div><!-- wrapper -->
