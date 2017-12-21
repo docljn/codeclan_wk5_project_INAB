@@ -7,19 +7,19 @@
     <div class="padding--4">
       <form class="" action="/transactions" method="get">
         <label for="clear_filters"></label>
-        <input id ="clear_filters" type="submit" name="" value="Clear Filters">
+        <input class="button" id ="clear_filters" type="submit" name="" value="Clear Filters">
       </form>
     </div>
 
 
     <div class="padding--4">
       <form class="" action="/transactions" method="get">
-        <label for="start_date_input">From </label>
+        <label class="label--autosize" for="start_date_input">From </label>
         <input id="start_date_input" type="date" name="date1" value="dd/mm/YYYY" autofocus="autofocus">
-        <label for="end_date_input"> to </label>
+        <label class="label--autosize" for="end_date_input"> to </label>
         <input id="end_date_input" type="date" name="date2" value="dd/mm/YYYY">
         <label for=""></label>
-        <input type="submit" name="filter_by_date" value="Filter by Date Range">
+        <input class="button" type="submit" name="filter_by_date" value="Filter by Date Range">
 
       </form>
     </div>
@@ -35,7 +35,7 @@
             <option value="<%= account.id %>"><%= account.name %></option>
             <% end %>
           </select>
-          <input type="submit" name="filter_by_account" value="Filter by Account">
+          <input class="button" type="submit" name="filter_by_account" value="Filter by Account">
         </form>
       </div>
 
@@ -49,7 +49,7 @@
             <option value="<%= category.id %>"><%= category.name %></option>
             <% end %>
           </select>
-          <input type="submit" name="filter_by_category" value="Filter by Category">
+          <input class="button" type="submit" name="filter_by_category" value="Filter by Category">
         </form>
       </div>
 
@@ -62,7 +62,7 @@
             <option value="<%= vendor.id %>"><%= vendor.name %></option>
             <% end %>
           </select>
-          <input type="submit" name="filter_by_vendor" value="Filter by Vendor">
+          <input class="button" type="submit" name="filter_by_vendor" value="Filter by Vendor">
         </form>
       </div>
 

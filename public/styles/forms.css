@@ -1,5 +1,9 @@
 label {
-  /* display: inline-block; */
-  font-size: 1em;
-  /* width: 8em; */
+  display: inline-block;
+  font-size: 1rem;
+  width: 6em;
+}
+
+.label--autosize {
+  display: inline;
 }

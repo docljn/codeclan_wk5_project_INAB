@@ -1,12 +1,39 @@
 /* input {
   font-size: 1em;
 }
+*/
 
-select, option {
+
+select, option, input {
   -webkit-appearance : none;
   -moz-appearance : none;
-  font-size: 1em;
-} */
+
+}
+
+.button {
+  border: 1px solid black;
+  border-radius: 4px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: .25rem 0;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+
+.button:hover,
+.button:focus {
+  background-color: grey;
+}
+
+
+
 
  /* input[type="submit"] {
   font-size: 1em;
