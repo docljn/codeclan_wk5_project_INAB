@@ -3,6 +3,11 @@ html {
   padding: 0;
 }
 
+*:focus {
+  outline: none;
+  font-weight: 700;
+}
+
 *, *::before, *::after {
   box-sizing: inherit;
   font-family: 'Montserrat', sans-serif;
