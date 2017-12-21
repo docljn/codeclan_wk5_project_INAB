@@ -43,14 +43,13 @@ class Category
 
   # create & update
   def save()
-    if @id
-      update()
-    else
-      insert()
+    if @name =!nil or @name != ""
+      if @id
+        update()
+      else
+        insert()
+      end
     end
-  end
-
-  def set_budget()
   end
 
   def transactions()
