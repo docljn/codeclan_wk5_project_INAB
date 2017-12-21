@@ -43,13 +43,16 @@ class Vendor
 
   # create & update
   def save()
-    if @id
-      update()
-    else
-      insert()
+    if @name =!nil or @name != ""
+      if @id
+        update()
+      else
+        insert()
+      end
     end
   end
 
+  
   def transactions()
     sql = "SELECT * FROM transactions WHERE vendor_id = $1;"
     values = [@id]
