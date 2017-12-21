@@ -41,10 +41,12 @@ class Account
   end
 
   def save()
-    if @id
-      update()
-    else
-      insert()
+    if @name =!nil or @name != ""
+      if @id
+        update()
+      else
+        insert()
+      end
     end
   end
 
