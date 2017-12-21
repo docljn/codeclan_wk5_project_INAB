@@ -1,39 +1,48 @@
 <!-- categories/edit.erb -->
-
-<h2>Edit Spending Category</h2>
-
-<form class="" action="/categories" method="get">
-  <!-- returns to list of existing categories -->
-  <label for="cancel_action"></label>
-  <input id="cancel_action"type="submit" name="cancel" value="Cancel">
-</form>
-
-<form class="" action="/categories/<%= @category.id %>" method="post">
-  <!-- displays and allows changes to a single category -->
+<fieldset>
+  <legend>Edit Spending Category</legend>
   <div class="">
-    <label for="category_name_input">Name: </label>
-    <input id="category_name_input" type="text" name="name" value="<%= @category.name %>" autofocus="autofocus">
+
+    <div class="padding--4">
+
+      <form class="" action="/categories" method="get">
+        <!-- returns to list of existing categories -->
+        <label for="cancel_action"></label>
+        <input id="cancel_action"type="submit" name="cancel" value="Cancel">
+      </form>
+    </div>
+
+    <form class="" action="/categories/<%= @category.id %>" method="post">
+      <!-- displays and allows changes to a single category -->
+      <div class="padding--4">
+        <label for="category_name_input">Name: </label>
+        <input id="category_name_input" type="text" name="name" value="<%= @category.name %>" autofocus="autofocus">
+      </div>
+      <div class="padding--4">
+        <label for="category_budget_input">Budget: </label>
+        <input type="text" name="" value="">
+        <input id="category_budget_input" type="number" name="budget" value="<%= Display.amount(@category.budget) %>" step="0.01">
+      </div>
+      <div class="padding--4">
+        <label for="save_category"></label>
+        <input class="confirm" id="save_category" type="submit" name="add_category" value="Save Changes">
+      </div>
+    </form>
+
+    <div class="padding--4">
+
+      <form class="" action="/categories/<%= @category.id %>/delete" method="post">
+        <label for="delete_category">Before deleting a category ensure you have removed all references to that category from your transactions.</label>
+        <input class="warning" id="delete_category" type="submit" name="delete_category" value="Delete Category">
+      </form>
+    </div>
   </div>
-  <div class="">
-    <label for="category_budget_input">Budget: </label>
-    <input id="category_budget_input" type="number" name="budget" value="<%= Display.amount(@category.budget) %> step="0.01">
-  </div>
-  <div class="">
-    <label for="save_category"></label>
-    <input class="confirm" id="save_category" type="submit" name="add_category" value="Save Changes">
-  </div>
-
-  <!-- potentially add category budget here -->
+</fieldset>
+<!-- potentially add category budget here -->
 
 
-</form>
 
-<h3>Before deleting a category:</h3>
-<p>Ensure you have removed all references to that category from your transactions.</p>
-<form class="" action="/categories/<%= @category.id %>/delete" method="post">
-  <label for="delete_category"></label>
-  <input class="warning" id="delete_category" type="submit" name="delete_category" value="Delete Category">
-</form>
+
 
 
 <!-- categories/edit.erb -->

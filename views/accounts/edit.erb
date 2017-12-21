@@ -1,22 +1,33 @@
-<h2>Edit Account Details</h2>
+<fieldset>
+  <legend>Edit Account</legend>
+  <div class="">
 
-<form class="" action="/accounts" method="get">
-  <label for="cancel"></label>
-  <input id="cancel" type="submit" name="" value="Cancel">
+    <div class="padding--4">
 
-</form>
+      <form class="" action="/accounts" method="get">
+        <label for="cancel"></label>
+        <input id="cancel" type="submit" name="" value="Cancel">
 
-<form class="" action="/accounts/<%= @account.id %>" method="post">
-  <label for="name_input">Name: </label>
-  <input id="name_input" type="text" name="name" value="<%= @account.name %>" autofocus="autofocus">
+      </form>
+    </div>
 
-  <label for=""></label>
-  <input type="submit" name="update_account" value="Save Changes">
-</form>
+    <form class="" action="/accounts/<%= @account.id %>" method="post">
+      <div class="padding--4">
 
-<h3>Before deleting an account:</h3>
-<p>Ensure you have removed all references to that account from your transactions.</p>
-<form class="" action="/accounts/<%= @account.id %>/delete" method="post">
-  <label for=""></label>
-  <input type="submit" name="" value="Delete Account">
-</form>
+        <label for="name_input">Name: </label>
+        <input id="name_input" type="text" name="name" value="<%= @account.name %>" autofocus="autofocus">
+      </div>
+      <div class="padding--4">
+
+        <label for=""></label>
+        <input class="confirm" type="submit" name="update_account" value="Save Changes">
+      </form>
+    </div>
+    <div class="padding--4">
+      <form class="" action="/accounts/<%= @account.id %>/delete" method="post">
+        <label for="">Before deleting an account ensure you have removed all references to that account from your transactions</label>
+        <input class="warning" type="submit" name="" value="Delete Account">
+      </form>
+    </div>
+  </div>
+</fieldset>

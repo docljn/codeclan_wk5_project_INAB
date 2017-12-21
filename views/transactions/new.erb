@@ -1,63 +1,68 @@
 <fieldset>
   <legend>New Transaction</legend>
+  <div class="">
 
-  <form class="" action="/transactions" method="get">
-    <!-- returns to list of existing transactions -->
-    <label for="cancel_action"></label>
-    <input id="cancel_action"type="submit" name="cancel" value="Cancel">
-  </form>
+    <div class="padding--4">
 
+      <form class="" action="/transactions" method="get">
+        <!-- returns to list of existing transactions -->
+        <label for="cancel_action"></label>
+        <input id="cancel_action"type="submit" name="cancel" value="Cancel">
+      </form>
 
-  <form class="" action="/transactions" method="post">
-
-    <div class="">
-      <label for="amount_input">£</label>
-      <input id="amount_input" type="number" name="amount" value="0" step="0.01" autofocus="autofocus">
     </div>
 
-    <div class="">
-      <label for="transaction_date">Date: </label>
-      <input id="transaction_date" type="date" name="transaction_date" value="<%= RecordDate.today %>">
-    </div>
+    <form class="" action="/transactions" method="post">
 
-    <div class="">
-      <label for="account_select">Account: </label>
-      <select id="account_select" class="" name="account_id">
-        <% @accounts.each do |account| %>
-        <option value="<%= account.id %>"><%= account.name %></option>
-        <% end %>
-      </select>
-    </div>
+      <div class="padding--4">
+        <label for="amount_input">£</label>
+        <input id="amount_input" type="number" name="amount" value="0" step="0.01" autofocus="autofocus">
+      </div>
 
-    <div class="">
-      <label for="vendor_select">Vendor: </label>
-      <select id="vendor_select" class="" name="vendor_id">
-        <% @vendors.each do |vendor| %>
-        <option value="<%= vendor.id %>"><%= vendor.name  %></option>
-        <% end %>
-      </select>
-    </div>
+      <div class="padding--4">
+        <label for="transaction_date">Date: </label>
+        <input id="transaction_date" type="date" name="transaction_date" value="<%= RecordDate.today %>">
+      </div>
 
-    <div class="">
-      <label for="category_select">Category: </label>
-      <select id="category_select" class="" name="category_id">
-        <% @categories.each do |category| %>
-        <option value="<%= category.id %>"><%= category.name %></option>
-        <% end %>
-      </select>
-    </div>
+      <div class="padding--4">
+        <label for="account_select">Account: </label>
+        <select id="account_select" class="" name="account_id">
+          <% @accounts.each do |account| %>
+          <option value="<%= account.id %>"><%= account.name %></option>
+          <% end %>
+        </select>
+      </div>
 
-    <div class="">
-      <label for="comment_input">Comment: </label>
-      <input id="comment_input" type="text" size="50" name="comment" value="">
-    </div>
+      <div class="padding--4">
+        <label for="vendor_select">Vendor: </label>
+        <select id="vendor_select" class="" name="vendor_id">
+          <% @vendors.each do |vendor| %>
+          <option value="<%= vendor.id %>"><%= vendor.name  %></option>
+          <% end %>
+        </select>
+      </div>
 
-    <div class="">
-      <label for=""></label>
-      <input  class="confirm" type="submit" name="Save Transaction" value="Save Transaction">
-    </div>
+      <div class="padding--4">
+        <label for="category_select">Category: </label>
+        <select id="category_select" class="" name="category_id">
+          <% @categories.each do |category| %>
+          <option value="<%= category.id %>"><%= category.name %></option>
+          <% end %>
+        </select>
+      </div>
 
-  </form>
+      <div class="padding--4">
+        <label for="comment_input">Comment: </label>
+        <input id="comment_input" type="text" size="50" name="comment" value="">
+      </div>
 
+      <div class="padding--4">
+        <label for=""></label>
+        <input  class="confirm" type="submit" name="Save Transaction" value="Save Transaction">
+      </div>
+
+    </form>
+
+  </div>
 
 </fieldset>
