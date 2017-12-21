@@ -8,10 +8,16 @@ html {
   font-weight: 700;
 }
 
+
+
 *, *::before, *::after {
   box-sizing: inherit;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+}
+
+a:hover {
+  font-weight: 700;
 }
 
 div {
