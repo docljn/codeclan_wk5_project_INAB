@@ -40,6 +40,12 @@ post "/vendors/:id" do
   redirect to("/vendors")
 end
 
+# delete vendor - access from edit page?
+post "/vendors/:id/delete" do
+  Vendor.delete_one(params['id'])
+  redirect to("/vendors")
+end
+
 
 
 
