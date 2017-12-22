@@ -58,7 +58,7 @@ get "/transactions/:id/edit" do
   @vendors = Vendor.select_all()
   @categories = Category.select_all()
   @accounts = Account.select_all()
-  erb(:"transactions/edit")
+  erb :"transactions/edit"
 
 end
 
