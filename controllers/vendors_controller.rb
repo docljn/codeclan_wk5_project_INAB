@@ -1,7 +1,6 @@
 # vendors_controller.rb
 require("sinatra")
-require("sinatra/contrib/all")
-require("pry-byebug")
+require('sinatra/contrib/all') if development?
 
 # require_relative("../models/account.rb")
 # require_relative("../models/category.rb")

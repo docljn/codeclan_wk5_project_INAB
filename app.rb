@@ -1,7 +1,6 @@
 # app.rb
 require('sinatra')
-require('sinatra/contrib/all')
-require('pry-byebug')
+require('sinatra/contrib/all') if development?
 
 # CARE: if you add a new controller, you MUST add it below!
 
