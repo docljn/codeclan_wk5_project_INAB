@@ -27,6 +27,7 @@ end
 
 get "/accounts/:id/edit" do
   @account = Account.select_one(params["id"])
+  @transactions_count = @account.transactions().length
   erb(:"/accounts/edit")
 end
 

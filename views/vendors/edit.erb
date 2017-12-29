@@ -26,10 +26,10 @@
     </form>
 
 
-    <div class="">
+    <div class="padding--4 <%= 'hidden' if @transactions_count > 0 %>">
       <form class="" action="/vendors/<%= @vendor.id %>/delete" method="post">
 
-        <div class="padding--4 <%= 'hidden' if @transactions_count > 0 %>">
+        <div>
           <input class="button warning" type="submit" name="delete_vendor" value="Delete Vendor">
         </div>
 

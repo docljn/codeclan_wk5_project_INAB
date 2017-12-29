@@ -6,13 +6,13 @@
     <table>
       <thead>
         <tr>
-          <th>Account Name</th> <th>Sort Code</th> <th>Account Number</th>
+          <th>Account Name</th> <!--<th>Sort Code</th> <th>Account Number</th>-->
         </tr>
       </thead>
       <tbody>
         <tr>
           <% @accounts.each do |account| %>
-          <td><a href="/accounts/<%= account.id %>/edit"> <%= account.name %></a></td> <td></td> <td></td>
+          <td><a href="/accounts/<%= account.id %>/edit"> <%= account.name %></a></td> <!--<td></td> <td></td>-->
         </tr>
         <% end %>
       </tbody>
