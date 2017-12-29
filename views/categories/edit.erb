@@ -26,10 +26,8 @@
       </div>
     </form>
 
-    <div class="padding--4">
-
+    <div class="padding--4 <%= 'hidden' if @transactions_count > 0 %>">
       <form class="" action="/categories/<%= @category.id %>/delete" method="post">
-        <label class="label--autosize" for="delete_category">Before deleting a category ensure you have removed all references to that category from your transactions.</label>
         <input class="button warning" id="delete_category" type="submit" name="delete_category" value="Delete Category">
       </form>
     </div>

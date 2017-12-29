@@ -28,6 +28,7 @@ end
 get("/categories/:id/edit") do
   @category = Category.select_one(params["id"])
   @transactions = Transaction.select_all()
+  @transactions_count = @category.transactions().length
   erb(:"/categories/edit")
 
 end

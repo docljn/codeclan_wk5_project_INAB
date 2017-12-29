@@ -57,7 +57,7 @@ class Category
   end
 
   def transactions()
-    sql = "SELECT * FROM transactions WHERE category_id = $1 ORDER BY transation_date;"
+    sql = "SELECT * FROM transactions WHERE category_id = $1 ORDER BY transaction_date;"
     values = [@id]
     sql_result = SqlRunner.run(sql, values)
     transactions = sql_result.map {|hash| Transaction.new(hash)}
