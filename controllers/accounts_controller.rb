@@ -32,7 +32,7 @@ end
 post("/accounts/:id") do
   account = Account.new(params)
   account.save()
-  redirect to ("/accounts")
+  redirect to("/accounts")
 end
 
 # delete

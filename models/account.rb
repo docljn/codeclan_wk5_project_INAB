@@ -65,7 +65,7 @@ class Account
   end
 
   def update()
-    sql = "UPDATE accounts SET (name) = ($1) WHERE (id) = ($2);"
+    sql = "UPDATE accounts SET name = $1 WHERE id = $2;"
     values = [@name, @id]
     sql_result = SqlRunner.run(sql, values)
   end
