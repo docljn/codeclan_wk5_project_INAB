@@ -29,8 +29,11 @@ end
 
 # edit
 
+
 get "/vendors/:id/edit" do
   @vendor = Vendor.select_one(params["id"])
+  # need to check if a vendor is used in any transactions:
+  @transactions_count = @vendor.transactions().length
   erb(:"/vendors/edit")
 end
 

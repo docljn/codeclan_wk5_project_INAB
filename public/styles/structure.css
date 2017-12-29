@@ -83,6 +83,10 @@ nav ul {
   justify-content: space-around;
 }
 
+.hidden {
+  display: none;
+}
+
 .padding--4 {
   padding: 4px;
 }

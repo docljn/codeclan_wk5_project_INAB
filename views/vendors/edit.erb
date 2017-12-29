@@ -20,7 +20,7 @@
       </div>
       <div class="padding--4">
 
-        
+
         <input class="button confirm" type="submit" name="update_vendor" value="Save Changes">
       </div>
     </form>
@@ -29,8 +29,10 @@
     <div class="">
       <form class="" action="/vendors/<%= @vendor.id %>/delete" method="post">
 
-        <div class="padding--4">
-          <label for="">Before deleting a vendor ensure you have removed all references to that vendor from your transactions.</label>
+        <div
+          <%="class='padding--4 hidden'" if @transactions_count != 0 %>
+          <%= "class='padding--4'" if @transactions_count == 0 %>
+          >
           <input class="button warning" type="submit" name="delete_vendor" value="Delete Vendor">
         </div>
 

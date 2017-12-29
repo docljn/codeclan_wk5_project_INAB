@@ -22,11 +22,12 @@
         <input class="button confirm" type="submit" name="update_account" value="Save Changes">
       </form>
     </div>
-    <div class="padding--4">
+    <div <%="class='padding --4 hidden'" if @transactions_count != 0 %>">
       <form class="" action="/accounts/<%= @account.id %>/delete" method="post">
         <label class="label--autosize" for="">Before deleting an account ensure you have removed all references to that account from your transactions</label>
         <input class="button warning" type="submit" name="" value="Delete Account">
       </form>
     </div>
+    <% end %>
   </div>
 </fieldset>
