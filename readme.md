@@ -41,7 +41,7 @@ Thinking about a specific potential user made it much easier to decide on a cons
 Tempting as it is to continue to tweak and extend this project, I have decided to put it on github and Heroku as a record of my first CodeClan project after just four weeks' instruction.  It will hopefully be encouraging to return to this and see just how much I have improved over the remainder of the course.
 
 ### Heroku link:
-
+http://ineedabudget.herokuapp.com
 
 ### I would have liked to:
 
