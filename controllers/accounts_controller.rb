@@ -29,6 +29,12 @@ get "/accounts/:id/edit" do
   erb(:"/accounts/edit")
 end
 
+post "/accounts/:id" do
+  account = Account.new(params)
+  account.save()
+  redirect to("/accounts")
+end
+
 # delete
 
 post "/accounts/:id/delete" do
