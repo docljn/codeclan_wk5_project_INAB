@@ -1,6 +1,4 @@
 # transaction.rb
-require('pry-byebug')
-# require('bigdecimal') - recommended for precise calculations, but 12 times slower than float.  Using float for now as database provides precision?
 require_relative('../db/sql_runner.rb')
 require_relative('../models/record_date.rb')
 

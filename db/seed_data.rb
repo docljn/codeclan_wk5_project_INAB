@@ -1,5 +1,3 @@
-require('pry-byebug')
-
 require_relative('../models/category.rb')
 require_relative('../models/vendor.rb')
 require_relative('../models/account.rb')

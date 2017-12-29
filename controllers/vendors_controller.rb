@@ -2,8 +2,6 @@
 require("sinatra")
 require('sinatra/contrib/all') if development?
 
-# require_relative("../models/account.rb")
-# require_relative("../models/category.rb")
 require_relative("../models/transaction.rb")
 require_relative("../models/vendor.rb")
 require_relative("../models/display.rb")
@@ -27,8 +25,6 @@ post "/vendors" do
 end
 
 # edit
-
-
 get "/vendors/:id/edit" do
   @vendor = Vendor.select_one(params["id"])
   # need to check if a vendor is used in any transactions:
@@ -47,12 +43,5 @@ post "/vendors/:id/delete" do
   Vendor.delete_one(params['id'])
   redirect to("/vendors")
 end
-
-
-
-
-
-
-
 
 # vendors_controller.rb
