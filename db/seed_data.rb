@@ -45,50 +45,108 @@ jemma.save()
 # accounts: # extension
 hbos = Account.new({'name' => "Bank of Scotland"})
 hbos.save()
-rbs = Account.new({'name' => "Royal Bank of Scotland"})
-rbs.save()
+credit_card = Account.new({'name' => "Credit Card"})
+credit_card.save()
+cash = Account.new({'name' => "Cash"})
+cash.save()
 
 # transactions
-amounts = [1.00, 5.00, 87.00, 3.00]
-amounts.each do |amount|
-  t = Transaction.new({
-    'amount' => amount,
-    'category_id' => fun.id,
-    'vendor_id' => aldi.id,
-    'account_id' => hbos.id,
-    'transaction_date' => "2017-12-05"
-    })
-  t.save()
-end
 
-amounts.each do |amount|
-  t = Transaction.new({
-    'amount' => amount/4,
-    'category_id' => lending.id,
-    'vendor_id' => jemma.id,
-    'account_id' => hbos.id,
-    'transaction_date' => "2017-12-07"
+t = Transaction.new({
+  'amount' => 5,
+  'category_id' => fun.id,
+  'vendor_id' => lidl.id,
+  'account_id' => hbos.id,
+  'transaction_date' => "2017-12-05"
+  })
+t.save()
 
-    })
-  t.save()
-end
+t1 = Transaction.new({
+  'amount' => 6,
+  'category_id' => lending.id,
+  'vendor_id' => jemma.id,
+  'account_id' => cash.id,
+  'transaction_date' => "2017-12-07"
+  })
+t1.save()
 
-amounts.each do |amount|
-  t = Transaction.new({
-    'amount' => amount+7,
-    'category_id' => gifts.id,
-    'vendor_id' => waitrose.id,
-    'account_id' => rbs.id
-    })
-  t.save()
-end
+t2 = Transaction.new({
+  'amount' => 7,
+  'category_id' => gifts.id,
+  'vendor_id' => aldi.id,
+  'account_id' => credit_card.id,
+  'transaction_date' => "2017-12-09"
+  })
+t2.save()
 
-amounts.each do |amount|
-  t = Transaction.new({
-    'amount' => amount*2,
-    'category_id' => car.id,
-    'vendor_id' => sainsburys.id,
-    'account_id' => rbs.id
-    })
-  t.save()
-end
+t3 = Transaction.new({
+  'amount' => 8,
+  'category_id' => car.id,
+  'vendor_id' => sainsburys.id,
+  'account_id' => hbos.id,
+  'transaction_date' => "2017-12-11"
+  })
+t3.save()
+
+t4 = Transaction.new({
+  'amount' => 9,
+  'category_id' => fun.id,
+  'vendor_id' => waitrose.id,
+  'account_id' => hbos.id,
+  'transaction_date' => "2017-12-13"
+  })
+t4.save()
+
+t5 = Transaction.new({
+  'amount' => 11,
+  'category_id' => lending.id,
+  'vendor_id' => jemma.id,
+  'account_id' => cash.id,
+  'transaction_date' => "2017-12-15"
+  })
+t5.save()
+
+t6 = Transaction.new({
+  'amount' => 13,
+  'category_id' => gifts.id,
+  'vendor_id' => aldi.id,
+  'account_id' => credit_card.id,
+  'transaction_date' => "2017-12-17"
+  })
+t6.save()
+
+t7 = Transaction.new({
+  'amount' => 15,
+  'category_id' => car.id,
+  'vendor_id' => sainsburys.id,
+  'account_id' => hbos.id,
+  'transaction_date' => "2017-12-19"
+  })
+t7.save()
+
+t8 = Transaction.new({
+  'amount' => 20,
+  'category_id' => gifts.id,
+  'vendor_id' => sainsburys.id,
+  'account_id' => credit_card.id,
+  'transaction_date' => "2017-12-21"
+  })
+t8.save()
+
+t9 = Transaction.new({
+  'amount' => 1.45,
+  'category_id' => lending.id,
+  'vendor_id' => jemma.id,
+  'account_id' => cash.id,
+  'transaction_date' => "2017-12-23"
+  })
+t9.save()
+
+t10 = Transaction.new({
+  'amount' => 8.99,
+  'category_id' => gifts.id,
+  'vendor_id' => waitrose.id,
+  'account_id' => hbos.id,
+  'transaction_date' => "2017-12-24"
+  })
+t10.save()
