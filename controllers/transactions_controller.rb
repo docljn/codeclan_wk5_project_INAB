@@ -64,9 +64,6 @@ end
 post "/transactions/:id" do
   transaction = Transaction.new(params)
   transaction.save()
-  # next line doesn't work - it's trying to find something odd.
-  # erb(:"/transactions")
-  # this does work:
   redirect to("/transactions")
 end
 

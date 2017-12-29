@@ -4,19 +4,19 @@
   <div class="">
 
     <div class="padding--4">
-
       <form class="" action="/categories" method="get">
-        <!-- returns to list of existing categories -->
         <input  class="button" type="submit" name="cancel" value="Cancel">
       </form>
     </div>
 
+
+
     <form class="" action="/categories/<%= @category.id %>" method="post">
-      <!-- displays and allows changes to a single category -->
       <div class="padding--4">
         <label for="category_name_input">Name: </label>
         <input id="category_name_input" type="text" name="name" value="<%= @category.name %>" autofocus="autofocus">
       </div>
+
       <div class="padding--4">
         <label for="category_budget_input">Budget: </label>
         <input id="category_budget_input" type="number" name="budget" value="<%= Display.amount(@category.budget) %>" step="0.01">

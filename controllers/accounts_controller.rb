@@ -5,17 +5,17 @@ require_relative("../models/account.rb")
 
 
 # read
-get "/accounts" do
+get ("/accounts") do
   @accounts = Account.select_all()
   erb(:"/accounts/index")
 end
 
 # create
-get "/accounts/new"  do
+get ("/accounts/new")  do
   erb(:"/accounts/new")
 end
 
-post "/accounts" do
+post ("/accounts") do
   account = Account.new(params)
   account.save()
   redirect to("/accounts")
@@ -23,13 +23,13 @@ end
 
 # edit
 
-get "/accounts/:id/edit" do
+get("/accounts/:id/edit") do
   @account = Account.select_one(params["id"])
   @transactions_count = @account.transactions().length
   erb(:"/accounts/edit")
 end
 
-post "/accounts/:id" do
+post("/accounts/:id") do
   account = Account.new(params)
   account.save()
   redirect to("/accounts")
@@ -37,7 +37,7 @@ end
 
 # delete
 
-post "/accounts/:id/delete" do
+post("/accounts/:id/delete") do
   Account.delete_one(params["id"])
   redirect to("/accounts")
 end
